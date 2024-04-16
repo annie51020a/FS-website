@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="content-page.css">
+    <style>
+        .section-content {
+            background-image: url(../Products/products-category-background.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-content .container {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 150px;
+        }
+
+        .catrgory-list {
+            width: 160px;
+        }
+
+        .catrgory-list h2 {
+            color: #3B3B3B;
+            font-size: 20px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 5px;
+
+        }
+
+        .main-menu>li {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-menu>li p {
+            padding: 10px 0px;
+            flex-grow: 1;
+        }
+
+        .main-menu>li>label input {
+            display: none;
+        }
+
+        .main-menu>li>label {
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+        }
+
+        .main-menu>li label:has(input:checked)+.sub-menu {
+            display: block;
+        }
+
+        .main-menu>li label:has(input:checked) {
+            scale: 1 -1;
+        }
+
+        .sub-menu {
+            display: none;
+            width: 100%;
+        }
+
+        .sub-menu>li {
+            list-style: none;
+        }
+
+        .sub-menu>li a {
+            text-decoration: none;
+            padding: 10px 6px 10px 15px;
+            text-align: justify;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #3B3B3B;
+        }
+
+        .product-sort-title h1 {
+            color: #3B3B3B;
+            font-size: 24px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 10px;
+
+        }
+
+
+        .nav-product-sort {
+            width: 250px;
+
+        }
+
+        .product-sort {
+            width: 960px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product-sort-bar {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .product-sort-bar h2 {
+            display: block;
+            text-align: justify;
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #3B3B3B;
+            border-bottom: 1px solid #3B3B3B;
+            flex-grow: 1;
+            margin-bottom: 10px;
+        }
+
+
+        .product-sort-bar label {
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+        }
+
+        .product-sort-bar label input {
+            display: none;
+        }
+
+        .product-sort-bar label:has(input:checked)+.sort-list {
+            display: block;
+            width: 220px;
+            border: 1px solid #3B3B3B;
+            position: absolute;
+            background-color: #FFFFFF;
+            top: 40px;
+            z-index: 1;
+        }
+
+        .product-sort-bar label:has(input:checked) {
+            scale: 1 -1;
+        }
+
+        .sort-list {
+            display: none;
+
+        }
+
+        .sort-list li {
+            list-style: none;
+        }
+
+        .sort-list>li+li {
+            border-top: 0.5px solid #3B3B3B;
+
+        }
+
+        .sort-list p {
+            text-align: justify;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #3B3B3B;
+            padding: 5px 25px;
+        }
+
+        .product-list {
+            width: 960px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 100px;
+            margin-top: 50px;
+        }
+
+        .product-item {
+            width: 235px;
+
+        }
+
+        .pic-product {
+            width: 235px;
+            height: 235px;
+            position: relative;
+
+        }
+
+        .pic-product img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .add-shopping-cart {
+            display: none;
+
+        }
+
+        .product-item:hover .add-shopping-cart {
+            width: 235px;
+            height: 50px;
+            background-color: #A6A0A0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+
+        }
+
+        .product-item:hover .add-shopping-cart p {
+            display: block;
+            font-size: 16px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #FFFFFF;
+        }
+
+        .product-item:hover .add-shopping-cart img {
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .add-shopping-cart p {
+            display: none;
+        }
+
+        .txt-shopping-cart a {
+
+            text-decoration: none;
+        }
+
+        .add-shopping-cart img {
+            display: none;
+        }
+
+        .product-name {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .product-name p{
+            text-align: justify;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #3B3B3B;    
+        }
+.product-price{
+        text-align: justify;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+    }
+    </style>
+</head>
+
+<body>
+    <header class="header-FS">
+        <div class="container">
+            <div class="pic-logo">
+                <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+            </div>
+            <div class="header-info">
+                <nav class="header-list">
+                    <ul>
+                        <li><a href="Abous-us.html">關於我們</a></li>
+                        <li><a href="Order-info.html">訂購須知</a></li>
+                        <li><a href="Products-category.html">產品介紹</a></li>
+                        <li><a href="News.html">最新消息</a></li>
+                        <li><a href="Question.html">常見問題</a></li>
+                        <li><a href="Contact-us.html">聯絡我們</a></li>
+                    </ul>
+                </nav>
+                <div class="shopping-info">
+                    <div class="pic-search"><img src="../Page/search.svg" alt=""></div>
+                    <div class="pic-customer"><a href="Log-in.html"><img src="../Page/customer.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="../Page/shopping-cart.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section-content">
+        <div class="container">
+            <nav class="catrgory-list">
+                <h2>類別</h2>
+                <ul class="main-menu">
+                    <li>
+                        <p>保健品</p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="">魚油</a>
+                            </li>
+                            <li>
+                                <a href="">維生素</a>
+                            </li>
+                            <li>
+                                <a href="">葉黃素</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>彩妝保養</p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="">唇膏</a>
+                            </li>
+                            <li>
+                                <a href="">精華液</a>
+                            </li>
+                            <li>
+                                <a href="">乳霜</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>精品</p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="">包包</a>
+                            </li>
+                            <li>
+                                <a href="">皮夾</a>
+                            </li>
+                            <li>
+                                <a href="">鞋子</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>熱銷商品</p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="">魚油</a>
+                            </li>
+                            <li>
+                                <a href="">維生素</a>
+                            </li>
+                            <li>
+                                <a href="">葉黃素</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>預購</p>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="">LV</a>
+                            </li>
+                            <li>
+                                <a href="">Chanel</a>
+                            </li>
+                            <li>
+                                <a href="">Hermes</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="product-sort">
+                <div class="product-sort-title">
+                    <h1>全部產品</h1>
+                </div>
+                <nav class="nav-product-sort">
+                    <div class="product-sort-bar">
+                        <h2>商品排序</h2>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sort-list">
+                            <li>
+                                <p>商品價格從高到低
+                                </p>
+                            </li>
+                            <li>
+                                <p>商品價格從低到高
+                                </p>
+                            </li>
+                            <li>
+                                <p>上架時間從新到舊
+                                </p>
+                            </li>
+                            <li>
+                                <p>上架時間從舊到新
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="product-list">
+                    <div class="product-item">
+                        <div class="pic-product"><a href="Products-page.html"><img src="../Products/products (2).png" alt=""></a>
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="Shopping-cart.html">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (1).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (3).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (4).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (5).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (6).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (7).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (9).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (10).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (11).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (12).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="pic-product"><img src="../Products/products (1).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="../Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>產品名稱</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$1000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-FS">
+        <div class="container">
+            <div class="brand-info">
+                <div class="pic-logo">
+                    <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+                </div>
+                <div class="brand-copyright">
+                    <p>© 2023-2030 法國選物</p>
+                </div>
+            </div>
+            <div class="contactus-info">
+                <div class="email">
+                    <p>信箱:xxxxx@gmail.com</p>
+                </div>
+                <div class="social-media">
+                    <div class="pic"><a href=""><img src="../Page/fb.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/ig.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/line.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

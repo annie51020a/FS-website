@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header-footer.css">
+    <style>
+
+        .section-banner {
+            width: 1920px;
+            height: 996px;
+            background-color: #F9F0E3;
+            align-content: center;
+        }
+
+
+        .section-banner .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .semi-circle {
+            width: 429px;
+            height: 149px;
+            overflow: hidden;
+            position: absolute;
+            left: -200px;
+            top: 0px;
+        }
+
+        .semi-circle-green {
+            width: 429px;
+            height: 215px;
+            border-radius: 215px 215px 0 0;
+            background-color: #9AA49C;
+        }
+
+        .pic-banner {
+            width: 1123px;
+            height: 766px;
+            z-index: 1;
+        }
+
+        .pic-banner img {
+            width: 1123px;
+            height: 766px;
+            border-radius: 83px;
+        }
+
+        .banner-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0PX;
+            right: 0PX;
+            z-index: 2;
+        }
+
+        .banner-txt {
+            text-align: center;
+            position: absolute;
+        }
+
+        .banner-txt p {
+            font-size: 36px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #FFFFFF;
+        }
+
+        .semi-circle-large {
+            width: 611px;
+            height: 151px;
+            overflow: hidden;
+        }
+
+        .semi-circle-orange {
+            width: 611px;
+            height: 366px;
+            border-radius: 305px / 183px;
+            background-color: #D18063;
+        }
+
+        .section-sologan {
+            width: 1920px;
+            height: 925px;
+            align-content: center;
+            background-image: url(../Page/slogan-background.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .section-sologan .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(../Page/dashed-circle.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 747px;
+            height: 800px;
+            position: relative;
+        }
+
+        .sologan-txt p {
+            width: 556px;
+            font-size: 36px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+
+        .france {
+            position: absolute;
+            top: 30px;
+            left: 150px;
+        }
+
+        .pic-france {
+            width: 308px;
+        }
+
+        .pic-france img {
+            width: 100%;
+        }
+
+        .france-txt-background {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 196px;
+            height: 63px;
+            background-color: #A34B1D;
+            position: absolute;
+            left: 56px;
+            bottom: -20px;
+        }
+
+
+        .france-txt p {
+            width: 102px;
+            font-size: 20px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #FFFFFF;
+        }
+
+        .taiwan {
+            position: absolute;
+            bottom: 50px;
+            right: 150px;
+        }
+
+        .pic-taiwan {
+            width: 308px;
+        }
+
+        .pic-taiwan img {
+            width: 100%;
+        }
+
+        .taiwan-txt-background {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 196px;
+            height: 63px;
+            background-color: #A34B1D;
+            position: absolute;
+            left: 56px;
+            bottom: -20px;
+        }
+
+
+        .taiwan-txt p {
+            width: 102px;
+            font-size: 20px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #FFFFFF;
+        }
+
+        .pic-airplane-top {
+            width: 200px;
+            height: 150px;
+            position: absolute;
+            top: -70px;
+            right: 300px;
+        }
+
+        .pic-airplane-top img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .pic-airplane-bottom {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 130px;
+            left: 300px;
+        }
+
+        .pic-airplane-bottom img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .section-product-category {
+            width: 1920px;
+            height: 740px;
+            background-color: #F9F0E3;
+            align-content: center;
+        }
+
+        .section-product-category .container {
+            justify-content: center;
+            align-items: center;
+            margin-top: 115px;
+            margin-bottom: 115px;
+        }
+
+        .title-product-category {
+            text-align: center;
+            margin-bottom: 142px;
+        }
+
+        .title-product-category h2 {
+            font-size: 32px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+
+        .card-list-product-category {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .card-product-category {
+            width: 333px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pic-product-category {
+            background-color: #FFFFFF;
+            width: 237px;
+            height: 336px;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            overflow: hidden;
+        }
+
+        .pic-product-category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .product-category-txt-background {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 230px;
+            height: 71px;
+            border-radius: 5px;
+            background-color: #A34B1D;
+            position: absolute;
+            left: -48px;
+            bottom: 0px;
+        }
+
+        .product-category-txt p {
+            font-size: 24px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #FFFFFF;
+        }
+
+        .section-best-selling {
+            width: 1920px;
+            height: 828px;
+            align-content: center;
+            background-image: url(../Page/best-selling-background.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .section-best-selling .container {
+            justify-content: center;
+            align-items: center;
+            margin-top: 115px;
+            margin-bottom: 115px;
+        }
+
+        .title-best-selling h2 {
+            text-align: center;
+            font-size: 32px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+            margin-bottom: 115px;
+        }
+
+        .card-list-best-selling {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .card-best-selling {
+            width: 196px;
+            height: 266px;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+        }
+
+        .best-selling-top-one {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .pic-crown {
+                width: 64px;
+                height: 64px;
+            }
+
+            .pic-crown img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .card-best-selling img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .card-best-selling-top-one {
+            width: 237px;
+            height: 336px;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #FFFFFF;
+            overflow: hidden;
+            margin-top: 20px;
+
+        }
+
+        .card-best-selling-top-one img {
+            width: 120%;
+            height: 120%;
+            object-fit: contain;
+            object-position: 0% 30%;
+        }
+
+        .btn-more-products {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 23px;
+        }
+
+        .btn-more-products button {
+            width: 180px;
+            height: 38px;
+            border-radius: 30px;
+            background-color: #A34B1D;
+            border: 0px;
+
+        }
+        .btn-more-products a{
+            font-size: 16px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 5px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .section-aboutus {
+            width: 1920px;
+            height: 524px;
+        }
+
+        .section-aboutus .container {
+            display: flex;
+            align-items: center;
+            padding-top: 134px;
+            padding-bottom: 154px;
+            position: relative;
+
+
+        }
+
+        .info-aboutus {
+            width: 436px;
+            justify-content: center;
+
+        }
+
+        .title-aboutus h2 {
+            text-align: center;
+            width: 436px;
+            font-size: 32px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+
+        .txt-aboutus {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .txt-aboutus p {
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 40px;
+            color: #3B3B3B;
+        }
+
+        .pic-aboutus {
+            width: 566px;
+            height: 619px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 250px;
+            border-bottom-left-radius: 250px;
+            overflow: hidden;
+            position: absolute;
+            top: 0px;
+            right: 15px;
+        }
+
+        .pic-aboutus img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .section-news {
+            width: 1920px;
+            height: 709px;
+            background-color: #F9F0E3;
+        }
+
+        .section-news .container {
+            display: flex;
+            flex-direction: column;
+            padding-top:115px ;
+            padding-bottom:115px ;
+
+        }
+
+        .title-news {
+            margin-bottom: 80px;
+        }
+
+        .title-news h2 {
+            text-align: center;
+            font-size: 32px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+
+        .card-list-news {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card-news {
+            position: relative;
+        }
+
+        .pic-news {
+            width: 309px;
+            height: 264px;
+            border-radius: 10%;
+        }
+
+        .pic-news img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .mark-background-news {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 104px;
+            height: 29px;
+            background-color: #FFB69C;
+            position: absolute;
+            left: -5px;
+            top: 15px;
+        }
+
+        .mark-background-news img {
+            font-size: 16px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #3B3B3B;
+        }
+
+        .btn-news {
+            width: 306px;
+            height: 36px;
+            border-radius: 20px;
+            background-color: #E59275;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0px;
+        }
+
+        .btn-news a {
+            text-decoration: none;
+            font-size: 24px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 400;
+            letter-spacing: 5px;
+            font-style: normal;
+            color: #3B3B3B;
+        }
+
+        .txt-news {
+            width: 306px;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 18px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 25px;
+            color: #3B3B3B;
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <header class="header-FS">
+        <div class="container">
+            <div class="pic-logo">
+                <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+            </div>
+            <div class="header-info">
+                <nav class="header-list">
+                    <ul>
+                        <li><a href="Abous-us.html">關於我們</a></li>
+                        <li><a href="Order-info.html">訂購須知</a></li>
+                        <li><a href="Products-category.html">產品介紹</a></li>
+                        <li><a href="News.html">最新消息</a></li>
+                        <li><a href="Question.html">常見問題</a></li>
+                        <li><a href="Contact-us.html">聯絡我們</a></li>
+                    </ul>
+                </nav>
+                <div class="shopping-info">
+                    <div class="pic-search"><img src="../Page/search.svg" alt=""></div>
+                    <div class="pic-customer"><a href="Log-in.html"><img src="../Page/customer.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="../Page/shopping-cart.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section-banner">
+        <div class="container">
+            <div class="semi-circle">
+                <div class="semi-circle-green"></div>
+            </div>
+            <div class="pic-banner"><img src="../Page/banner.jpg" alt=""></div>
+            <div class="banner-info">
+                <div class="semi-circle-large">
+                    <div class="semi-circle-orange"></div>
+                </div>
+                <div class="banner-txt">
+                    <p>Shopping</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-sologan">
+        <div class="container">
+            <div class="pic-airplane-top"><img src="../Page/airplane-top.svg" alt=""></div>
+            <div class="pic-airplane-bottom"><img src="../Page/airplane-bottom.svg" alt=""></div>
+            <div class="sologan-txt">
+                <p>為您運送法國的藥妝和精品</p>
+            </div>
+            <div class="france">
+                <div class="pic-france"><img src="../Page/France.png" alt=""></div>
+                <div class="france-txt-background">
+                    <div class="france-txt">
+                        <p>France</p>
+                    </div>
+                </div>
+            </div>
+            <div class="taiwan">
+                <div class="pic-taiwan"><img src="../Page/Taiwan.png" alt=""></div>
+                <div class="taiwan-txt-background">
+                    <div class="taiwan-txt">
+                        <p>Taiwan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-product-category">
+        <div class="container">
+            <div class="title-product-category">
+                <h2>產品種類</h2>
+            </div>
+            <div class="card-list-product-category">
+                <div class="card-product-category">
+                    <div class="pic-product-category"><img src="../Products/5-enzymes.webp" alt=""></div>
+                    <div class="product-category-txt-background">
+                        <div class="product-category-txt">
+                            <a href="Products-category.html"><p>保健品</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product-category">
+                    <div class="pic-product-category"><img src="../Products/makeup.jpg" alt=""></div>
+                    <div class="product-category-txt-background">
+                        <div class="product-category-txt">
+                            <a href="Products-category.html"><p>彩妝保養</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-product-category">
+                    <div class="pic-product-category"><img src="../Products/handbag.jpg" alt=""></div>
+                    <div class="product-category-txt-background">
+                        <div class="product-category-txt">
+                            <a href="Products-category.html"><p>精品</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-best-selling">
+        <div class="container">
+            <div class="title-best-selling">
+                <h2>熱銷商品</h2>
+            </div>
+            <div class="card-list-best-selling">
+                <div class="card-best-selling">
+                    <div class="pic-best-selling"></div><img src="../Products/peau-radieuse.webp" alt="">
+                </div>
+                <div class="card-best-selling">
+                    <div class="pic-best-selling"></div><img src="../Products/liposomal-vitamin-c.webp" alt="">
+                </div>
+                <div class="best-selling-top-one">
+                    <div class="pic-crown"><img src="../Products/crown.svg" alt=""></div>
+                    <div class="card-best-selling-top-one">
+                        <div class="pic-best-selling-top-one"></div><img src="../Products/collagen-express-gummies.webp"
+                            alt="">
+                    </div>
+                </div>
+                <div class="card-best-selling">
+                    <div class="pic-best-selling"></div><img src="../Products/hyaluronic-max.webp" alt="">
+                </div>
+                <div class="card-best-selling">
+                    <div class="pic-best-selling"></div><img src="../Products/keratine-max.webp" alt="">
+                </div>
+            </div>
+            <div class="btn-more-products"><button><a href="Products-category.html"><p>看更多商品</p></a>
+            </button></div>
+        </div>
+    </section>
+    <section class="section-aboutus">
+        <div class="container">
+            <div class="info-aboutus">
+                <div class="title-aboutus">
+                    <h2>關於我們</h2>
+                </div>
+                <div class="txt-aboutus">
+                    <p>旅居法國期間，受愛購物的個性使然，開始鑽研台灣與法國的藥妝與精品市場，藉由敏銳的洞察力與精準的判斷力，在法國替台灣的時尚消費者提供更貼近需求的單品。
+                    </p>
+                </div>
+            </div>
+            <div class="pic-aboutus"><img src="../Page/about-us.jpg" alt=""></div>
+        </div>
+    </section>
+    <section class="section-news">
+        <div class="container">
+            <div class="title-news">
+                <h2>最新消息</h2>
+            </div>
+            <div class="card-list-news">
+                <div class="card-news">
+                    <div class="mark-background-news">
+                        <div class="mark-date">
+                            <p>2024/02/1</p>
+                        </div>
+                    </div>
+                    <div class="pic-news"><img src="../Page/pharmacy.JPG" alt=""></div>
+                    <buttom class="btn-news"><a href="News.html"><p>藥房漲價</p></a></buttom>
+                    <div class="txt-news">
+                        <p>近期原物料上漲，保健品隨之漲價，小本生意......</p>
+                    </div>
+                </div>
+                <div class="card-news">
+                    <div class="mark-background-news">
+                        <div class="mark-date">
+                            <p>2024/01/15</p>
+                        </div>
+                    </div>
+                    <div class="pic-news"><img src="../Page/plane.jpg" alt=""></div>
+                    <buttom class="btn-news"><a href="News.html"><p>運送時程更新</p></a></buttom>
+                    <div class="txt-news">
+                        <p>適逢連續假日，航班和貨運滿檔，於此更新寄送時程...... </p>
+                    </div>
+                </div>
+                <div class="card-news">
+                    <div class="mark-background-news">
+                        <div class="mark-date">
+                            <p>2023/12/24</p>
+                        </div>
+                    </div>
+                    <div class="pic-news"><img src="../Page/store.JPG" alt=""></div>
+                    <buttom class="btn-news"><a href="News.html"><p>折扣季開始</p></a></buttom>
+                    <div class="txt-news">
+                        <p>聖誕節為法國一年一度的大折扣季，精品折扣下殺......</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer class="footer-FS">
+        <div class="container">
+            <div class="brand-info">
+                <div class="pic-logo">
+                    <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+                </div>
+                <div class="brand-copyright">
+                    <p>© 2023-2030 法國選物</p>
+                </div>
+            </div>
+            <div class="contactus-info">
+                <div class="email">
+                    <p>信箱:xxxxx@gmail.com</p>
+                </div>
+                <div class="social-media">
+                    <div class="pic"><a href=""><img src="../Page/fb.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/ig.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/line.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

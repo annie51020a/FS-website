@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="content-page.css">
+    <style>
+        .section-product-info {
+            width: 1920px;
+            height: 1125px;
+            background-color: #F9F0E3;
+        }
+
+        .section-product-info .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-top: 200px;
+        }
+
+        .pic-main-product {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #606060;
+            border-radius: 10px;
+
+        }
+
+        .pic-main-product img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .product-slide {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 75px;
+        }
+
+        .slide {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #606060;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .pic-slide {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #606060;
+            border-radius: 10px;
+        }
+
+        .pic-slide img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            width: 520px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .product-title h1 {
+            font-size: 32px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+
+        .product-txt p {
+            text-align: justify;
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+        }
+
+        .product-price p {
+            text-align: justify;
+            font-size: 24px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+        }
+
+        .product-size p {
+            text-align: justify;
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+        }
+
+        .product-size-list {
+            position: relative;
+            display: block;
+            width: 100%;
+            margin: 0 0 10px;
+        }
+
+        .size span {
+            text-align: justify;
+            font-size: 16px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+
+        }
+
+        .size {
+            position: relative;
+            width: 500px;
+            color: #3B3B3B;
+            font-size: 16px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #3B3B3B;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .size::after {
+            content: "";
+            position: absolute;
+            top: 16px;
+            right: 12px;
+            border-width: 8px 6px;
+            border-style: solid;
+            border-color: #999 transparent transparent transparent;
+        }
+
+        .size-option {
+            display: none;
+            width: 520px;
+            position: absolute;
+            color: #3B3B3B;
+            padding: 0;
+            margin: 0;
+            background-color: #FFF;
+            border-radius: 5px;
+            border: 1px solid #3B3B3B;
+            z-index: 5;
+        }
+
+        .product-size-list:hover {
+            .size-option {
+                display: block;
+            }
+
+            .size-option>li {
+                display: block;
+                padding: 10px;
+                font-size: 16px;
+                margin: 0 10px;
+                cursor: pointer;
+                text-align: justify;
+                font-size: 14px;
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: 5px;
+                color: #3B3B3B;
+
+            }
+        }
+
+        .size-option>li:hover {
+            background-color: #EEDBD6;
+            border-radius: 5px;
+        }
+
+        .product-buying {
+            width: 520px;
+            height: 115px;
+            background-color: #F9D9AB;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .product-buying p {
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+        }
+
+        .number {
+            width: 110px;
+            height: 50px;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: -30px;
+        }
+
+        .shopping-cart {
+            width: 190px;
+            height: 65px;
+            background-color: #F39E23;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-product-content {
+            width: 1920px;
+            background-color: #F9F0E3;
+        }
+
+        .section-product-content .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        hr {
+            width: 1100px;
+            margin-bottom: 100px;
+        }
+
+        .product-description-title h2 {
+            font-size: 24px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 600;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+
+        .product-description-txt {
+            margin-top: 30px;
+            margin-bottom: 100px;
+
+        }
+
+        .product-description-txt li {
+            text-align: justify;
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+            list-style-type: disc;
+        }
+
+        .more-pictures {
+            width: 900px;
+            height: 470px;
+            margin-bottom: 70px;
+
+        }
+
+        .more-pictures img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-FS">
+        <div class="container">
+            <div class="pic-logo">
+                <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+            </div>
+            <div class="header-info">
+                <nav class="header-list">
+                    <ul>
+                        <li><a href="Abous-us.html">關於我們</a></li>
+                        <li><a href="Order-info.html">訂購須知</a></li>
+                        <li><a href="Products-category.html">產品介紹</a></li>
+                        <li><a href="News.html">最新消息</a></li>
+                        <li><a href="Question.html">常見問題</a></li>
+                        <li><a href="Contact-us.html">聯絡我們</a></li>
+                    </ul>
+                </nav>
+                <div class="shopping-info">
+                    <div class="pic-search"><img src="../Page/search.svg" alt=""></div>
+                    <div class="pic-customer"><a href="Log-in.html"><img src="../Page/customer.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="../Page/shopping-cart.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section-product-info">
+        <div class="container">
+            <div class="pic-product">
+                <div class="pic-main-product"><img src="../Products/products (2).png" alt=""></div>
+                <div class="product-slide">
+                    <button class="slide"><img src="../Products/slide-left.svg" alt=""></button>
+                    <div class="pic-slide"><img src="../Products/pic-slide-1.png" alt=""></div>
+                    <div class="pic-slide"><img src="../Products/pic-slide-2.png" alt=""></div>
+                    <button class="slide"><img src="../Products/slide-right.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="product-title">
+                    <h1>ALDO Biranad Crossbody Bag</h1>
+                </div>
+                <div class="product-txt">
+                    <p>風格精緻且帶有一絲魅力，我們華麗的小 Biranad 斜挎包完全符合您的風格。光滑的深黑色搭配金色鏈帶使這款包非常適合參加雞尾酒會。</p>
+                </div>
+                <div class="product-price">
+                    <p>$10000</p>
+                </div>
+                <div class="product-size">
+                    <p>Size</p>
+                </div>
+                <div class="product-size-list">
+                    <div class="size">
+                        <span>Choose</span>
+                    </div>
+                    <ul class="size-option">
+                        <li>Large</li>
+                        <li>Medium</li>
+                        <li>Small</li>
+                    </ul>
+                </div>
+                <div class="product-buying">
+                    <div class="product-quantity">
+                        <p>Quantity</p>
+                    </div>
+                    <div class="number">
+                        <img src="../Products/minus.svg" alt="">
+                        <p>1</p>
+                        <img src="../Products/plus.svg" alt="">
+                    </div>
+                    <div class="shopping-cart">
+                        <p>Add to cart</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-product-content">
+        <div class="container">
+            <hr>
+            <div class="product-description">
+                <div class="product-description-title">
+                    <h2>商品描述</h2>
+                </div>
+                <ul class="product-description-txt">
+                    <li>絎縫紋理人造皮革單肩包</li>
+                    <li>頂部翻蓋磁性鈕釦開合</li>
+                    <li>內部襯裡</li>
+                    <li>1 個內部拉鍊口袋</li>
+                    <li>附加半鏈肩帶</li>
+                    <li>尺寸：長22公分 x 高15公分 x 寬8公分</li>
+                </ul>
+            </div>
+            <div class="more-pictures"><img src="../Products/product-page-pic (1).png" alt=""></div>
+            <div class="more-pictures"><img src="../Products/product-page-pic (2).png" alt=""></div>
+            <div class="more-pictures"><img src="../Products/product-page-pic (3).png" alt=""></div>
+            <div class="more-pictures"><img src="../Products/product-page-pic (4).png" alt=""></div>
+        </div>
+    </section>
+    <footer class="footer-FS">
+        <div class="container">
+            <div class="brand-info">
+                <div class="pic-logo">
+                    <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+                </div>
+                <div class="brand-copyright">
+                    <p>© 2023-2030 法國選物</p>
+                </div>
+            </div>
+            <div class="contactus-info">
+                <div class="email">
+                    <p>信箱:xxxxx@gmail.com</p>
+                </div>
+                <div class="social-media">
+                    <div class="pic"><a href=""><img src="../Page/fb.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/ig.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/line.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

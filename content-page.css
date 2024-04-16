@@ -1,0 +1,85 @@
+.section-banner {
+    width: 1920px;
+    height: 680px;
+    background-color: #F9F0E3;
+    align-content: center;
+}
+
+.section-banner .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 115px;
+    padding-bottom: 115px;
+
+}
+
+
+.pic-banner {
+    width: 770px;
+    height: 450px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    overflow: hidden;
+    margin-left: 107px;
+    margin-right: 328px;
+
+}
+
+.pic-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.title-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 115px;
+    margin-right: 107px;
+}
+
+    .title-txt {
+    text-align: center;
+    position: absolute;
+}
+
+.title-txt h1 {
+    font-size: 48px;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 10px;
+    color: #FFFFFF;
+}
+
+.title-background {
+    width: 466px;
+    height: 115px;
+    overflow: hidden;
+    
+}
+
+.title-background-oval {
+    width: 466px;
+    height: 280px;
+    background-color: #D18063;
+    border-radius: 233px/140px;
+}
+
+.section-content{
+    width: 1920px;
+            height: 2695px;
+            background-image: url(../Page/content-background.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+}

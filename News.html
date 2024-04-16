@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="content-page.css">
+
+    <style>
+        .section-content{
+    height: 2189px;
+        }
+        .section-content .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 300px;
+            padding-bottom: 170px;
+        }
+
+        .card {
+            display: flex;
+            margin-bottom: 130px;
+            align-items: flex-start;
+        }
+
+        .pic-news-page {
+            width: 500px;
+            height: 430px;
+            vertical-align: middle;
+
+        }
+
+        .pic-news-page img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 20px;
+        }
+        .news-page-info{
+            margin-left: 130px;
+        }
+        .news-page-title{
+            margin-bottom: 40px;
+        }
+        h2{
+            font-size: 32px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 900;
+            font-style: normal;
+            letter-spacing: 10px;
+            color: #3B3B3B;
+        }
+        .news-page-txt{
+            display: flex;
+            flex-wrap: wrap;
+            width: 580px;
+            height: 326px;
+        }
+        .news-page-txt p{
+            text-align: justify;
+            font-size: 24px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+        }
+
+        .news-page-date p{
+            text-align: right;
+            font-size: 20px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 25px;
+            color: #3B3B3B;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-FS">
+        <div class="container">
+            <div class="pic-logo">
+                <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+            </div>
+            <div class="header-info">
+                <nav class="header-list">
+                    <ul>
+                        <li><a href="Abous-us.html">關於我們</a></li>
+                        <li><a href="Order-info.html">訂購須知</a></li>
+                        <li><a href="Products-category.html">產品介紹</a></li>
+                        <li><a href="News.html">最新消息</a></li>
+                        <li><a href="Question.html">常見問題</a></li>
+                        <li><a href="Contact-us.html">聯絡我們</a></li>
+                    </ul>
+                </nav>
+                <div class="shopping-info">
+                    <div class="pic-search"><img src="../Page/search.svg" alt=""></div>
+                    <div class="pic-customer"><a href="Log-in.html"><img src="../Page/customer.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="../Page/shopping-cart.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section-banner">
+        <div class="container">
+            <div class="pic-banner"><img src="../Page/news-banner.jpg" alt=""></div>
+            <div class="title-info">
+                <div class="title-background">
+                    <div class="title-background-oval"></div>
+                </div>
+                <div class="title-txt">
+                    <h1>最新消息</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-content">
+        <div class="container">
+            <div class="card">
+                <div class="pic-news-page"><img src="../Page/pharmacy.JPG" alt=""></div>
+                <div class="news-page-info">
+                    <div class="news-page-title">
+                        <h2>藥房漲價</h2>
+                    </div>
+                    <div class="news-page-txt">
+                        <p>近期原物料上漲，保健品隨之漲價，小本生意，因此產品價格也只能跟著微調，還請見諒。</p>
+                    </div>
+                    <div class="news-page-date">
+                        <p>2024/2/1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic-news-page"><img src="../Page/plane.JPG" alt=""></div>
+                <div class="news-page-info">
+                    <div class="news-page-title">
+                        <h2>運送時程更新</h2>
+                    </div>
+                    <div class="news-page-txt">
+                        <p>適逢連續假日，航班和貨運滿檔，於此更新寄送時程，約2月底到貨。 </p>
+                    </div>
+                    <div class="news-page-date">
+                        <p>2024/1/15</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="pic-news-page"><img src="../Page/store.JPG" alt=""></div>
+                <div class="news-page-info">
+                    <div class="news-page-title">
+                        <h2>折扣季開始</h2>
+                    </div>
+                    <div class="news-page-txt">
+                        <p>聖誕節為法國一年一度的大折扣季，精品折扣下殺，如有需要，歡迎詢問。</p>
+                    </div>
+                    <div class="news-page-date">
+                        <p>2023/12/24</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-FS">
+        <div class="container">
+            <div class="brand-info">
+                <div class="pic-logo">
+                    <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+                </div>
+                <div class="brand-copyright">
+                    <p>© 2023-2030 法國選物</p>
+                </div>
+            </div>
+            <div class="contactus-info">
+                <div class="email">
+                    <p>信箱:xxxxx@gmail.com</p>
+                </div>
+                <div class="social-media">
+                    <div class="pic"><a href=""><img src="../Page/fb.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/ig.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/line.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

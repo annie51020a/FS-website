@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="header-footer.css">
+    <link rel="stylesheet" href="content-page.css">
+
+    <style>
+        .section-content {
+            height: 1300px;
+        }
+
+        .section-content .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-order-info {
+            width: 900px;
+            background-color: #fff;
+            border: 1px solid #3B3B3B;
+            border-radius: 10px;
+            margin-top: 250px;
+            margin-bottom: 250px;
+
+        }
+
+        .main-menu>li {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-menu>li+li {
+            border-top: 0.5px solid #3B3B3B;
+
+        }
+
+        .main-menu h2 {
+            display: block;
+            color: #3B3B3B;
+            font-size: 30px;
+            font-family: "Noto Serif TC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 10px;
+        }
+
+        .main-menu>li h2 {
+            width: 0;
+            padding: 6px 10px;
+            flex-grow: 1;
+        }
+
+        .main-menu>li li p {
+            width: 860px;
+            padding: 10px 10px 10px 20px;
+        }
+
+        .main-menu>li>label {
+            display: flex;
+            padding: 0 10px;
+            align-items: center;
+        }
+
+        .main-menu>li>label input {
+            display: none;
+        }
+
+        .main-menu>li label:has(input:checked)+.sub-menu {
+            display: block;
+        }
+
+        .main-menu>li label:has(input:checked) {
+            scale: 1 -1;
+        }
+
+        .sub-menu {
+            display: none;
+            width: 100%;
+        }
+
+        .sub-menu li {
+            list-style: none;
+        }
+
+        .sub-menu p {
+            text-align: justify;
+            font-size: 24px;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 5px;
+            line-height: 30px;
+            color: #3B3B3B;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-FS">
+        <div class="container">
+            <div class="pic-logo">
+                <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+            </div>
+            <div class="header-info">
+                <nav class="header-list">
+                    <ul>
+                        <li><a href="Abous-us.html">關於我們</a></li>
+                        <li><a href="Order-info.html">訂購須知</a></li>
+                        <li><a href="Products-category.html">產品介紹</a></li>
+                        <li><a href="News.html">最新消息</a></li>
+                        <li><a href="Question.html">常見問題</a></li>
+                        <li><a href="Contact-us.html">聯絡我們</a></li>
+                    </ul>
+                </nav>
+                <div class="shopping-info">
+                    <div class="pic-search"><img src="../Page/search.svg" alt=""></div>
+                    <div class="pic-customer"><a href="Log-in.html"><img src="../Page/customer.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="../Page/shopping-cart.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="section-banner">
+        <div class="container">
+            <div class="pic-banner"><img src="../Page/order-info.jpg" alt=""></div>
+            <div class="title-info">
+                <div class="title-background">
+                    <div class="title-background-oval"></div>
+                </div>
+                <div class="title-txt">
+                    <h1>訂購須知</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-content">
+        <div class="container">
+            <nav class="nav-order-info">
+                <ul class="main-menu">
+                    <li>
+                        <h2>運送流程</h2>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <p>小幫手採買後進行包貨和寄貨，從法國寄出到香港，再轉運至台灣。
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>預購天數</h2>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <p>約需要三~四星期左右，如遇到假日將會延長。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>退換貨說明</h2>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <p>如有重大瑕疵或損害，適用七日鑑賞期，但客製化給付（ex:特定的精品包包），為消費者下訂後，依照指定的尺寸、樣式、規格等進行採買（如自行指定皮夾的規格、材質、顏色），不適用七日鑑賞期。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>注意事項</h2>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <p>特價 Outlet 商品難免會有凹到或小瑕疵，屬於正常購買範圍內，完美主義者勿下單。</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>免責說明</h2>
+                        <label>
+                            <input type="checkbox" name="" id="">
+                            ⌵
+                        </label>
+                        <ul class="sub-menu">
+                            <li>
+                                <p>您同意本購物網的商品價格、數量、資訊、庫存等商品資訊隨時會有發生變動的可能。
+                                    由於本購物網資訊量龐大，雖然會盡量確保您所閱覽的商品資訊的準確性，但由於技術問題或人為操作等因素，本購物網顯示資訊可能存在有一定的誤差，因此我們不保證無誤。如果您訂購的商品在我們核實後發現沒有庫存，我們將會取消已缺貨商品的訂單、全額退款、並用您預留的聯繫方式通知您。</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <footer class="footer-FS">
+        <div class="container">
+            <div class="brand-info">
+                <div class="pic-logo">
+                    <a href="FS-website.html"><img src="../Page/Logo.png" alt=""></a>
+                </div>
+                <div class="brand-copyright">
+                    <p>© 2023-2030 法國選物</p>
+                </div>
+            </div>
+            <div class="contactus-info">
+                <div class="email">
+                    <p>信箱:xxxxx@gmail.com</p>
+                </div>
+                <div class="social-media">
+                    <div class="pic"><a href=""><img src="../Page/fb.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/ig.svg" alt=""></a></div>
+                    <div class="pic"><a href=""><img src="../Page/line.svg" alt=""></a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

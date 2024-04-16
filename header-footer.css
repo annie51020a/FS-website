@@ -1,0 +1,128 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header-FS {
+    width: 1920px;
+    height: 267px;
+    background-color: #EEDBD6;
+    align-content: center;
+}
+
+
+
+.header-FS .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.pic-logo {
+    width: 214px;
+    height: 188px;
+}
+
+.pic-logo img {
+    width: 100%;
+
+}
+
+.header-info {
+    width: 646px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.header-list ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    gap: 20px;
+}
+
+.header-list a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #5F5F5F;
+}
+
+.shopping-info {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 26px;
+    gap: 20px;
+}
+
+
+.shopping-info img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-FS {
+    width: 1920px;
+    height: 356px;
+    background-color: #EEDBD6;
+}
+
+.footer-FS .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.brand-copyright {
+    margin-top: 15px;
+}
+
+.brand-copyright p {
+    display: flex;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 5px;
+    color: #5F5F5F;
+}
+
+
+.contactus-info p {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 5px;
+    color: #5F5F5F;
+}
+
+.social-media {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+}
