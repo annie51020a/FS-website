@@ -7,7 +7,6 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <style>
-
         .section-banner {
             width: 1920px;
             height: 996px;
@@ -196,12 +195,38 @@
             color: #FFFFFF;
         }
 
+        @keyframes pinpon1 {
+
+            0% {
+                top: 150px;
+            right: 80px;
+            }
+
+            50% {
+                top: 50px;
+                right: 150px;
+            }
+
+            100% {
+                top: 0px;
+                right: 200px;
+            }
+        }
+
+
+
         .pic-airplane-top {
             width: 200px;
             height: 150px;
             position: absolute;
-            top: -70px;
-            right: 300px;
+            top: 150px;
+            right: 80px;
+            rotate: 30deg;
+            animation-name: pinpon1;
+            animation-duration: 2s;
+            animation-timing-function: ease-in;
+            animation-delay: 0.5s;
+
         }
 
         .pic-airplane-top img {
@@ -209,13 +234,37 @@
             height: 100%;
         }
 
+        @keyframes pinpon2 {
+
+            0% {
+                bottom: 180px;
+                left: 30px;
+            }
+
+            50% {
+                bottom: 80px;
+                left: 100px;
+            }
+
+            100% {
+                bottom: 30px;
+                left: 150px;
+            }
+        }
+
         .pic-airplane-bottom {
             width: 200px;
             height: 200px;
+            rotate: 10deg;
             position: absolute;
-            bottom: 130px;
-            left: 300px;
+            bottom: 180px;
+            left: 30px;
+            animation-name: pinpon2;
+            animation-duration: 2s;
+            animation-timing-function: ease-in;
+            animation-delay: 0.5s;
         }
+
 
         .pic-airplane-bottom img {
             width: 100%;
@@ -404,7 +453,8 @@
             border: 0px;
 
         }
-        .btn-more-products a{
+
+        .btn-more-products a {
             font-size: 16px;
             font-family: "Noto Serif TC", serif;
             font-weight: 700;
@@ -492,8 +542,8 @@
         .section-news .container {
             display: flex;
             flex-direction: column;
-            padding-top:115px ;
-            padding-bottom:115px ;
+            padding-top: 115px;
+            padding-bottom: 115px;
 
         }
 
@@ -590,7 +640,6 @@
             line-height: 25px;
             color: #3B3B3B;
         }
-
     </style>
 
 
@@ -618,7 +667,8 @@
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg"
+                                alt=""></a></div>
                 </div>
             </div>
         </div>
@@ -676,7 +726,9 @@
                     <div class="pic-product-category"><img src="Products/5-enzymes.webp" alt=""></div>
                     <div class="product-category-txt-background">
                         <div class="product-category-txt">
-                            <a href="Products-category.html"><p>保健品</p></a>
+                            <a href="Products-category.html">
+                                <p>保健品</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -684,7 +736,9 @@
                     <div class="pic-product-category"><img src="Products/makeup.jpg" alt=""></div>
                     <div class="product-category-txt-background">
                         <div class="product-category-txt">
-                            <a href="Products-category.html"><p>彩妝保養</p></a>
+                            <a href="Products-category.html">
+                                <p>彩妝保養</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -692,7 +746,9 @@
                     <div class="pic-product-category"><img src="Products/handbag.jpg" alt=""></div>
                     <div class="product-category-txt-background">
                         <div class="product-category-txt">
-                            <a href="Products-category.html"><p>精品</p></a>
+                            <a href="Products-category.html">
+                                <p>精品</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -725,8 +781,10 @@
                     <div class="pic-best-selling"></div><img src="Products/keratine-max.webp" alt="">
                 </div>
             </div>
-            <div class="btn-more-products"><button><a href="Products-category.html"><p>看更多商品</p></a>
-            </button></div>
+            <div class="btn-more-products"><button><a href="Products-category.html">
+                        <p>看更多商品</p>
+                    </a>
+                </button></div>
         </div>
     </section>
     <section class="section-aboutus">
@@ -756,7 +814,9 @@
                         </div>
                     </div>
                     <div class="pic-news"><img src="Page/pharmacy.JPG" alt=""></div>
-                    <buttom class="btn-news"><a href="News.html"><p>藥房漲價</p></a></buttom>
+                    <buttom class="btn-news"><a href="News.html">
+                            <p>藥房漲價</p>
+                        </a></buttom>
                     <div class="txt-news">
                         <p>近期原物料上漲，保健品隨之漲價，小本生意......</p>
                     </div>
@@ -768,7 +828,9 @@
                         </div>
                     </div>
                     <div class="pic-news"><img src="Page/plane.jpg" alt=""></div>
-                    <buttom class="btn-news"><a href="News.html"><p>運送時程更新</p></a></buttom>
+                    <buttom class="btn-news"><a href="News.html">
+                            <p>運送時程更新</p>
+                        </a></buttom>
                     <div class="txt-news">
                         <p>適逢連續假日，航班和貨運滿檔，於此更新寄送時程...... </p>
                     </div>
@@ -780,7 +842,9 @@
                         </div>
                     </div>
                     <div class="pic-news"><img src="Page/store.JPG" alt=""></div>
-                    <buttom class="btn-news"><a href="News.html"><p>折扣季開始</p></a></buttom>
+                    <buttom class="btn-news"><a href="News.html">
+                            <p>折扣季開始</p>
+                        </a></buttom>
                     <div class="txt-news">
                         <p>聖誕節為法國一年一度的大折扣季，精品折扣下殺......</p>
                     </div>
