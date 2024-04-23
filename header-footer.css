@@ -1,21 +1,15 @@
 
-* {
-    margin: 0;
-    padding: 0;
-}
+
 
 .container {
     max-width: 1200px;
     margin: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 1.25%;
 }
 
 .header-FS {
-    width: 1920px;
-    height: 267px;
+    width: 100%;
     background-color: #EEDBD6;
-    align-content: center;
 }
 
 
@@ -23,39 +17,41 @@
 .header-FS .container {
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    padding:1% 1.25%;
 }
 
 
 .pic-logo {
-    width: 214px;
-    height: 188px;
+    width: 10.7%;
+    /* height: 9.4%; */
 }
 
 .pic-logo img {
     width: 100%;
-
+    vertical-align: middle;
 }
 
 .header-info {
-    width: 646px;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-
+    align-items: flex-end;
+    gap:15px;
 }
 
 .header-list ul {
     display: flex;
     justify-content: flex-end;
     list-style: none;
-    gap: 20px;
+    gap: 15px;
 }
 
 .header-list a {
     text-decoration: none;
     font-size: 20px;
     font-family: "Noto Serif TC", serif;
+    font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     color: #5F5F5F;
@@ -63,37 +59,48 @@
 
 .shopping-info {
     display: flex;
-    justify-content: flex-end;
-    margin-top: 26px;
-    gap: 20px;
+    justify-content:center;
+    gap: 15px;
+
 }
 
-
-.shopping-info img {
-    width: 30px;
-    height: 30px;
+.shopping-info img{
+width: 30px;
 }
+
 
 .footer-FS {
-    width: 1920px;
-    height: 356px;
+    width: 100%;
     background-color: #EEDBD6;
 }
 
 .footer-FS .container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    align-content: center;
+    padding:1% 1.25%;
 }
 
-.brand-copyright {
-    margin-top: 15px;
+.brand-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:15px;   
 }
+
+.brand-info .pic-logo{
+width:34.7%;
+}
+
+.brand-info img{
+    width:100%;
+    vertical-align: middle;
+    }
+
 
 .brand-copyright p {
-    display: flex;
+    text-align: left;
     font-size: 20px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -103,6 +110,13 @@
     color: #5F5F5F;
 }
 
+.contactus-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap:15px;   
+}
 
 .contactus-info p {
     font-size: 20px;
@@ -116,10 +130,9 @@
 
 .social-media {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 15px;
+    gap: 15px;
 }
 
 .social-media img {
