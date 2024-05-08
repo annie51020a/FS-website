@@ -933,32 +933,27 @@
         </div>
     </section>
     <script>
-        if (window.innerWidth <= 768) { // 如果是手機或平板
-            // 取得DOM元素
+        if (window.innerWidth <= 768) { 
             let prevButton = document.querySelector('.prev-button');
             let nextButton = document.querySelector('.next-button');
             let cardList = document.querySelector('.card-list-product-category');
             let cards = document.querySelectorAll('.card-product-category');
-
-            // 設定初始索引值
             let currentIndex = 0;
 
-            // 點擊事件處理函式 - 下一個
             nextButton.addEventListener('click', () => {
-                cards[currentIndex].classList.remove('active');
+                cards[currentIndex].classList.remove('active'); 
                 currentIndex++;
                 if (currentIndex >= cards.length) {
-                    currentIndex = 0; // 如果超出範圍，回到第一張圖片
+                    currentIndex = 0; 
                 }
                 cards[currentIndex].classList.add('active');
             });
 
-            // 點擊事件處理函式 - 上一個
             prevButton.addEventListener('click', () => {
                 cards[currentIndex].classList.remove('active');
                 currentIndex--;
                 if (currentIndex < 0) {
-                    currentIndex = cards.length - 1; // 如果超出範圍，回到最後一張圖片
+                    currentIndex = cards.length - 1;
                 }
                 cards[currentIndex].classList.add('active');
             });
@@ -1001,10 +996,10 @@
             let screenWidth = window.innerWidth;
 
             function showSlides() {
-                for (let i = 0; i < slides.length; i++) {
+                for (let i = 0; i < slides.length; i++) {//slides.length=5
                     slides[i].style.display = "none";
                 }
-                slideIndex++;
+                slideIndex++; 
                 if (slideIndex > slides.length) { slideIndex = 1 }
                 slides[slideIndex - 1].style.display = "block";
                 setTimeout(showSlides, 3000);
