@@ -7,6 +7,8 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="reset.css">
+
     <style>
         .section-content {
             background-image: url(Products/products-category-background.png);
@@ -16,32 +18,52 @@
 
         .section-content .container {
             display: flex;
-            justify-content: space-between;
-            padding-top: 150px;
+            justify-content: center;
+            padding: 5% 1.25% 8% 1.25%;
+            gap: 10%;
         }
 
         .catrgory-list {
-            width: 160px;
+            width: 13%;
+            height: 50%;
+            background-color: #FFECD1;
+            border-radius: 5px;
+            padding: 10px 0px 5px 10px;
+
         }
 
         .catrgory-list h2 {
             color: #3B3B3B;
-            font-size: 20px;
+            font-size: clamp(16px, 2.5vw, 24px);
             font-family: "Noto Serif TC", serif;
             font-weight: 700;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
+        }
+
+        .main-menu {
+            padding-top: 5%;
 
         }
 
         .main-menu>li {
             display: flex;
             flex-wrap: wrap;
+            padding: 5px 0;
         }
 
+
         .main-menu>li p {
-            padding: 10px 0px;
+            color: #3B3B3B;
+            font-size: clamp(12px, 2.5vw, 18px);
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0.1em;
+            padding: 10px 0px 5px 0px;
             flex-grow: 1;
+            border-bottom: 0.5px dashed #3B3B3B;
+
         }
 
         .main-menu>li>label input {
@@ -65,137 +87,75 @@
         .sub-menu {
             display: none;
             width: 100%;
+            padding: 5px 0;
+
         }
 
         .sub-menu>li {
             list-style: none;
+            padding: 5px 0;
         }
 
         .sub-menu>li a {
             text-decoration: none;
             padding: 10px 6px 10px 15px;
             text-align: justify;
-            font-size: 16px;
+            font-size: clamp(12px, 2.5vw, 16px);
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
             color: #3B3B3B;
         }
 
         .product-sort-title h1 {
             color: #3B3B3B;
-            font-size: 24px;
+            font-size: clamp(16px, 2.5vw, 24px);
             font-family: "Noto Serif TC", serif;
             font-weight: 900;
             font-style: normal;
-            letter-spacing: 10px;
-
-        }
-
-
-        .nav-product-sort {
-            width: 250px;
+            letter-spacing: 0.4em;
+            padding: 5px 0;
 
         }
 
         .product-sort {
-            width: 960px;
+            width: 70%;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
 
-        .product-sort-bar {
-            display: flex;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .product-sort-bar h2 {
-            display: block;
-            text-align: justify;
-            font-size: 20px;
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
-            border-bottom: 1px solid #3B3B3B;
-            flex-grow: 1;
-            margin-bottom: 10px;
-        }
-
-
-        .product-sort-bar label {
-            display: flex;
-            padding: 0 10px;
-            align-items: center;
-        }
-
-        .product-sort-bar label input {
-            display: none;
-        }
-
-        .product-sort-bar label:has(input:checked)+.sort-list {
-            display: block;
-            width: 220px;
-            border: 1px solid #3B3B3B;
-            position: absolute;
-            background-color: #FFFFFF;
-            top: 40px;
-            z-index: 1;
-        }
-
-        .product-sort-bar label:has(input:checked) {
-            scale: 1 -1;
-        }
-
-        .sort-list {
-            display: none;
-
-        }
-
-        .sort-list li {
-            list-style: none;
-        }
-
-        .sort-list>li+li {
-            border-top: 0.5px solid #3B3B3B;
-
-        }
-
-        .sort-list p {
-            text-align: justify;
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
+        #product-sort-select {
+            width: 20%;
+            border-radius: 5px;
+            font-size: clamp(12px, 2.5vw, 16px);
+            font-family: "Noto Serif TC", serif;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.1em;
             color: #3B3B3B;
-            padding: 5px 25px;
         }
 
+
+
         .product-list {
-            width: 960px;
+            width: 100%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            gap: 100px;
-            margin-top: 50px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            margin-top: 5%;
+            gap: 3%;
+            justify-items: flex-start;
         }
 
         .product-item {
-            width: 235px;
-
+            width: 100%;
         }
 
         .pic-product {
-            width: 235px;
-            height: 235px;
+            width: 100%;
             position: relative;
 
         }
@@ -211,8 +171,8 @@
         }
 
         .product-item:hover .add-shopping-cart {
-            width: 235px;
-            height: 50px;
+            width: 100%;
+            height: 20%;
             background-color: #A6A0A0;
             display: flex;
             justify-content: center;
@@ -226,11 +186,11 @@
 
         .product-item:hover .add-shopping-cart p {
             display: block;
-            font-size: 16px;
+            font-size: clamp(12px, 2.5vw, 16px);
             font-family: "Noto Serif TC", serif;
             font-weight: 700;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
             color: #FFFFFF;
         }
 
@@ -255,30 +215,64 @@
         }
 
         .product-name {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin: 5% 0;
         }
-        .product-name p{
+
+        .product-name p {
             text-align: justify;
-            font-size: 16px;
+            font-size: clamp(12px, 2vw, 16px);
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;    
-        }
-.product-price{
-        text-align: justify;
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: 5px;
-            line-height: 30px;
+            letter-spacing: 0.1em;
             color: #3B3B3B;
-    }
+        }
+
+        .product-price p {
+            text-align: justify;
+            font-size: clamp(12px, 2vw, 16px);
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0.1em;
+            line-height: 20px;
+            color: #3B3B3B;
+        }
+
+        @media screen and (max-width:768px) {
+            .catrgory-list {
+                display: none;
+            }
+
+            .product-sort {
+                width: 90%;
+            }
+
+            #product-sort-select {
+                width: 32%;
+            }
+
+
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                margin-top: 5%;
+                gap: 3%;
+                margin-bottom: 18%;
+            }
+
+            .product-item:nth-child(n+9) {
+                display: none;
+            }
+
+
+            .product-name p,
+            .product-price p {
+                letter-spacing: 0.1em;
+            }
+        }
     </style>
 </head>
 
@@ -289,21 +283,30 @@
                 <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
             </div>
             <div class="header-info">
-                <nav class="header-list">
-                    <ul>
-                        <li><a href="Abous-us.html">關於我們</a></li>
-                        <li><a href="Order-info.html">訂購須知</a></li>
-                        <li><a href="Products-category.html">產品介紹</a></li>
-                        <li><a href="News.html">最新消息</a></li>
-                        <li><a href="Question.html">常見問題</a></li>
-                        <li><a href="Contact-us.html">聯絡我們</a></li>
-                    </ul>
-                </nav>
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart-black.svg"
+                                alt=""></a></div>
                 </div>
+                <nav class="header-list">
+                    <input type="checkbox" id="menu">
+                    <label for="menu" class="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="cover">
+                            <ul>
+                                <li><a href="Abous-us.html">關於我們</a></li>
+                                <li><a href="Order-info.html">訂購須知</a></li>
+                                <li><a href="Products-category.html">產品介紹</a></li>
+                                <li><a href="News.html">最新消息</a></li>
+                                <li><a href="Question.html">常見問題</a></li>
+                                <li><a href="Contact-us.html">聯絡我們</a></li>
+                            </ul>
+                        </span>
+                    </label>
+                </nav>
             </div>
         </div>
     </header>
@@ -409,36 +412,17 @@
                 <div class="product-sort-title">
                     <h1>全部產品</h1>
                 </div>
-                <nav class="nav-product-sort">
-                    <div class="product-sort-bar">
-                        <h2>商品排序</h2>
-                        <label>
-                            <input type="checkbox" name="" id="">
-                            ⌵
-                        </label>
-                        <ul class="sort-list">
-                            <li>
-                                <p>商品價格從高到低
-                                </p>
-                            </li>
-                            <li>
-                                <p>商品價格從低到高
-                                </p>
-                            </li>
-                            <li>
-                                <p>上架時間從新到舊
-                                </p>
-                            </li>
-                            <li>
-                                <p>上架時間從舊到新
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <select id="product-sort-select">
+                    <option value="">商品排序</option>
+                    <option value="price-desc">商品價格從高到低</option>
+                    <option value="price-asc">商品價格從低到高</option>
+                    <option value="new-to-old">上架時間從新到舊</option>
+                    <option value="old-to-new">上架時間從舊到新</option>
+                </select>
                 <div class="product-list">
-                    <div class="product-item">
-                        <div class="pic-product"><a href="Products-page.html"><img src="Products/products (2).png" alt=""></a>
+                    <div class="product-item" data-date="2024-05-01">
+                        <div class="pic-product"><a href="Products-page.html"><img src="Products/products (2).png"
+                                    alt=""></a>
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
                                     <a href="Shopping-cart.html">
@@ -450,70 +434,14 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>ALDO Biranad 黑金斜背包
+                            </p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$15000</p>
                         </div>
                     </div>
-                    <div class="product-item">
-                        <div class="pic-product"><img src="Products/products (1).png" alt="">
-                            <div class="add-shopping-cart">
-                                <div class="txt-shopping-cart">
-                                    <a href="">
-                                        <p>加入購物車</p>
-                                    </a>
-                                </div>
-                                <div class="pic-shopping-cart"><a href=""><img src="Products/shopping-cart.svg"
-                                            alt=""></a></div>
-                            </div>
-                        </div>
-                        <div class="product-name">
-                            <p>產品名稱</p>
-                        </div>
-                        <div class="product-price">
-                            <p>$1000</p>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pic-product"><img src="Products/products (3).png" alt="">
-                            <div class="add-shopping-cart">
-                                <div class="txt-shopping-cart">
-                                    <a href="">
-                                        <p>加入購物車</p>
-                                    </a>
-                                </div>
-                                <div class="pic-shopping-cart"><a href=""><img src="Products/shopping-cart.svg"
-                                            alt=""></a></div>
-                            </div>
-                        </div>
-                        <div class="product-name">
-                            <p>產品名稱</p>
-                        </div>
-                        <div class="product-price">
-                            <p>$1000</p>
-                        </div>
-                    </div>
-                    <div class="product-item">
-                        <div class="pic-product"><img src="Products/products (4).png" alt="">
-                            <div class="add-shopping-cart">
-                                <div class="txt-shopping-cart">
-                                    <a href="">
-                                        <p>加入購物車</p>
-                                    </a>
-                                </div>
-                                <div class="pic-shopping-cart"><a href=""><img src="Products/shopping-cart.svg"
-                                            alt=""></a></div>
-                            </div>
-                        </div>
-                        <div class="product-name">
-                            <p>產品名稱</p>
-                        </div>
-                        <div class="product-price">
-                            <p>$1000</p>
-                        </div>
-                    </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-02">
                         <div class="pic-product"><img src="Products/products (5).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -526,13 +454,71 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Furla 長夾</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$12000</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-03">
+                        <div class="pic-product"><img src="Products/products (3).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>Alanderiel 鍊條斜背包
+                                </p>
+                        </div>
+                        <div class="product-price">
+                            <p>$17500</p>
+                        </div>
+                    </div>
+                    <div class="product-item" data-date="2024-05-04">
+                        <div class="pic-product"><img src="Products/products (4).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>Sweetheart 迷你愛心包</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$19900</p>
+                        </div>
+                    </div>
+                    <div class="product-item" data-date="2024-05-05">
+                        <div class="pic-product"><img src="Products/products (8).png" alt="">
+                            <div class="add-shopping-cart">
+                                <div class="txt-shopping-cart">
+                                    <a href="">
+                                        <p>加入購物車</p>
+                                    </a>
+                                </div>
+                                <div class="pic-shopping-cart"><a href=""><img src="Products/shopping-cart.svg"
+                                            alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="product-name">
+                            <p>The ordinary 美白精華</p>
+                        </div>
+                        <div class="product-price">
+                            <p>$490</p>
+                        </div>
+                    </div>
+                    <div class="product-item" data-date="2024-05-06">
                         <div class="pic-product"><img src="Products/products (6).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -545,13 +531,13 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>GA 水光粉底液</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$1500</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-07">
                         <div class="pic-product"><img src="Products/products (7).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -564,13 +550,13 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Revolution 泥面膜</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$590</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-08">
                         <div class="pic-product"><img src="Products/products (9).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -583,13 +569,13 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Estee Lauder 小棕瓶</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$2690</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-09">
                         <div class="pic-product"><img src="Products/products (10).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -602,13 +588,13 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Biocyte 膠原蛋白粉</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$1890</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-10">
                         <div class="pic-product"><img src="Products/products (11).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -621,13 +607,13 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Biocyte 抗掉髮飲</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$1990</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-11">
                         <div class="pic-product"><img src="Products/products (12).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -640,13 +626,13 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Biocyte 生酮瘦身飲</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$1890</p>
                         </div>
                     </div>
-                    <div class="product-item">
+                    <div class="product-item" data-date="2024-05-12">
                         <div class="pic-product"><img src="Products/products (1).png" alt="">
                             <div class="add-shopping-cart">
                                 <div class="txt-shopping-cart">
@@ -659,16 +645,61 @@
                             </div>
                         </div>
                         <div class="product-name">
-                            <p>產品名稱</p>
+                            <p>Biocyte 魚油</p>
                         </div>
                         <div class="product-price">
-                            <p>$1000</p>
+                            <p>$999</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+    var selectElement = document.getElementById('product-sort-select');
+    
+    selectElement.addEventListener('change', function() {
+        var selectedOption = selectElement.value;
+        
+        var productContainer = document.querySelector('.product-list');
+    
+        var productItems = productContainer.querySelectorAll('.product-item');
+    
+        var productArray = Array.from(productItems);
+    
+        if (selectedOption === 'price-desc') {
+            productArray.sort(function(a, b) {
+                var priceA = parseFloat(a.querySelector('.product-price p').textContent.replace('$', ''));
+                var priceB = parseFloat(b.querySelector('.product-price p').textContent.replace('$', ''));
+                return priceB - priceA;
+            });
+        } else if (selectedOption === 'price-asc') {
+            productArray.sort(function(a, b) {
+                var priceA = parseFloat(a.querySelector('.product-price p').textContent.replace('$', ''));
+                var priceB = parseFloat(b.querySelector('.product-price p').textContent.replace('$', ''));
+                return priceA - priceB;
+            });
+        } else if (selectedOption === 'new-to-old') {
+            productArray.sort(function(a, b) {
+                var dateA = new Date(a.getAttribute('data-date'));
+                var dateB = new Date(b.getAttribute('data-date'));
+                return dateB - dateA;
+            });
+        } else if (selectedOption === 'old-to-new') {
+            productArray.sort(function(a, b) {
+                var dateA = new Date(a.getAttribute('data-date'));
+                var dateB = new Date(b.getAttribute('data-date'));
+                return dateA - dateB;
+            });
+        }
+    
+        productArray.forEach(function(item) {
+            productContainer.appendChild(item);
+        });
+    });
+    </script>
+    
+    
     <footer class="footer-FS">
         <div class="container">
             <div class="brand-info">

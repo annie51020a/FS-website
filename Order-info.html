@@ -7,10 +7,11 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="reset.css">
+
 
     <style>
         .section-content {
-            height: 1300px;
             background-image: url(Page/order-info-background.png);
             background-repeat: no-repeat;
             background-position: center;
@@ -18,19 +19,17 @@
         }
 
         .section-content .container {
+            padding: 5% 1.25%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .nav-order-info {
-            width: 900px;
+            width: 45%;
             background-color: #fff;
             border: 1px solid #3B3B3B;
-            border-radius: 10px;
-            margin-top: 250px;
-            margin-bottom: 250px;
-
+            border-radius: 5px;
         }
 
         .main-menu>li {
@@ -46,21 +45,22 @@
         .main-menu h2 {
             display: block;
             color: #3B3B3B;
-            font-size: 30px;
+            font-size: clamp(16px, 2.5vw, 20px);
             font-family: "Noto Serif TC", serif;
             font-weight: 700;
             font-style: normal;
-            letter-spacing: 10px;
+            letter-spacing: 0.2em;
+
         }
 
         .main-menu>li h2 {
             width: 0;
-            padding: 6px 10px;
+            padding: 10px 10px;
             flex-grow: 1;
         }
 
         .main-menu>li li p {
-            width: 860px;
+            width: 80%;
             padding: 10px 10px 10px 20px;
         }
 
@@ -93,14 +93,29 @@
 
         .sub-menu p {
             text-align: justify;
-            font-size: 24px;
+            font-size: clamp(12px, 2vw, 16px);
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            line-height: 30px;
+            letter-spacing: 0.2em;
+            line-height: 20px;
             color: #3B3B3B;
+        }
+
+        @media screen and (max-width:768px) {
+
+            .nav-order-info {
+                width: 60%;
+            }
+
+            .main-menu>li li p {
+                padding: 5px 10px 5px 20px;
+            }
+
+            label {
+                background-color: #fff;
+            }
         }
     </style>
 </head>
@@ -112,32 +127,37 @@
                 <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
             </div>
             <div class="header-info">
-                <nav class="header-list">
-                    <ul>
-                        <li><a href="Abous-us.html">關於我們</a></li>
-                        <li><a href="Order-info.html">訂購須知</a></li>
-                        <li><a href="Products-category.html">產品介紹</a></li>
-                        <li><a href="News.html">最新消息</a></li>
-                        <li><a href="Question.html">常見問題</a></li>
-                        <li><a href="Contact-us.html">聯絡我們</a></li>
-                    </ul>
-                </nav>
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart-black.svg"
+                                alt=""></a></div>
                 </div>
+                <nav class="header-list">
+                    <input type="checkbox" id="menu">
+                    <label for="menu" class="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="cover">
+                            <ul>
+                                <li><a href="Abous-us.html">關於我們</a></li>
+                                <li><a href="Order-info.html">訂購須知</a></li>
+                                <li><a href="Products-category.html">產品介紹</a></li>
+                                <li><a href="News.html">最新消息</a></li>
+                                <li><a href="Question.html">常見問題</a></li>
+                                <li><a href="Contact-us.html">聯絡我們</a></li>
+                            </ul>
+                        </span>
+                    </label>
+                </nav>
             </div>
         </div>
     </header>
     <section class="section-banner">
         <div class="container">
-            <div class="pic-banner"><img src="Page/order-info.jpg" alt=""></div>
-            <div class="title-info">
-                <div class="title-background">
-                    <div class="title-background-oval"></div>
-                </div>
-                <div class="title-txt">
+            <div class="pic-banner"><img src="Page/order-info-1.png" alt="">
+                <div class="title-info">
                     <h1>訂購須知</h1>
                 </div>
             </div>
@@ -180,7 +200,8 @@
                         </label>
                         <ul class="sub-menu">
                             <li>
-                                <p>如有重大瑕疵或損害，適用七日鑑賞期，但客製化給付（ex:特定的精品包包），為消費者下訂後，依照指定的尺寸、樣式、規格等進行採買（如自行指定皮夾的規格、材質、顏色），不適用七日鑑賞期。</p>
+                                <p>如有重大瑕疵或損害，適用七日鑑賞期，但客製化給付（ex:特定的精品包包），為消費者下訂後，依照指定的尺寸、樣式、規格等進行採買（如自行指定皮夾的規格、材質、顏色），不適用七日鑑賞期。
+                                </p>
                             </li>
                         </ul>
                     </li>
@@ -205,7 +226,8 @@
                         <ul class="sub-menu">
                             <li>
                                 <p>您同意本購物網的商品價格、數量、資訊、庫存等商品資訊隨時會有發生變動的可能。
-                                    由於本購物網資訊量龐大，雖然會盡量確保您所閱覽的商品資訊的準確性，但由於技術問題或人為操作等因素，本購物網顯示資訊可能存在有一定的誤差，因此我們不保證無誤。如果您訂購的商品在我們核實後發現沒有庫存，我們將會取消已缺貨商品的訂單、全額退款、並用您預留的聯繫方式通知您。</p>
+                                    由於本購物網資訊量龐大，雖然會盡量確保您所閱覽的商品資訊的準確性，但由於技術問題或人為操作等因素，本購物網顯示資訊可能存在有一定的誤差，因此我們不保證無誤。如果您訂購的商品在我們核實後發現沒有庫存，我們將會取消已缺貨商品的訂單、全額退款、並用您預留的聯繫方式通知您。
+                                </p>
                             </li>
                         </ul>
                     </li>

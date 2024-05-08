@@ -7,9 +7,12 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="reset.css">
+
 
     <style>
         .section-content {
+            width: 100%;
             background-image: url(Page/content-background.png);
             background-repeat: no-repeat;
             background-position: center;
@@ -17,8 +20,7 @@
         }
 
         .section-content .container {
-            padding-top: 300px;
-            padding-bottom: 300px;
+            padding: 5% 1.25%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,41 +28,39 @@
 
         .card {
             display: flex;
+            justify-content: center;
             align-items: center;
-            margin-bottom: 170px;
+            margin-bottom: 5%;
+            gap:5%;
         }
 
         .pic-card {
-            width: 588px;
-            height: 581px;
+            width: 25%;
         }
 
         .pic-card img {
             width: 100%;
+            vertical-align: middle;
+
         }
 
         .card-info {
-            margin: auto;
-            width: 471px;
+            width: 25%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-left: 60px;
-            margin-right: 60px;
 
         }
 
         .title-card {
-            margin-bottom: 25px;
-
+            margin-bottom: 5%;
         }
 
         h2 {
-            font-size: 32px;
-            font-family: "Noto Serif TC", serif;
+            font-size: clamp(16px, 2.5vw, 24px);            font-family: "Noto Serif TC", serif;
             font-weight: 900;
             font-style: normal;
-            letter-spacing: 10px;
+            letter-spacing: 0.2em;
             color: #3B3B3B;
         }
 
@@ -71,14 +71,34 @@
 
         p {
             text-align: justify;
-            font-size: 20px;
-            font-family: "Inter", sans-serif;
+            font-size: clamp(12px, 2vw, 16px);            font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            line-height: 40px;
+            letter-spacing: 0.2em;
+            line-height: 25px;
             color: #3B3B3B;
+        }
+
+        @media screen and (max-width:768px){
+            .card {
+            margin-bottom: 10%;
+        }
+
+
+        .card-info {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+            p {
+            letter-spacing: 0.1em;
+            line-height: 20px;
+        }
+            
         }
     </style>
 </head>
@@ -90,36 +110,40 @@
                 <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
             </div>
             <div class="header-info">
-                <nav class="header-list">
-                    <ul>
-                        <li><a href="Abous-us.html">關於我們</a></li>
-                        <li><a href="Order-info.html">訂購須知</a></li>
-                        <li><a href="Products-category.html">產品介紹</a></li>
-                        <li><a href="News.html">最新消息</a></li>
-                        <li><a href="Question.html">常見問題</a></li>
-                        <li><a href="Contact-us.html">聯絡我們</a></li>
-                    </ul>
-                </nav>
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg"
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart-black.svg"
                                 alt=""></a></div>
                 </div>
+                <nav class="header-list">
+                    <input type="checkbox" id="menu">
+                    <label for="menu" class="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="cover">
+                            <ul>
+                                <li><a href="Abous-us.html">關於我們</a></li>
+                                <li><a href="Order-info.html">訂購須知</a></li>
+                                <li><a href="Products-category.html">產品介紹</a></li>
+                                <li><a href="News.html">最新消息</a></li>
+                                <li><a href="Question.html">常見問題</a></li>
+                                <li><a href="Contact-us.html">聯絡我們</a></li>
+                            </ul>
+                        </span>
+                    </label>
+                </nav>
             </div>
         </div>
     </header>
     <section class="section-banner">
         <div class="container">
-            <div class="pic-banner"><img src="Page/about-us.jpg" alt=""></div>
+            <div class="pic-banner"><img src="Page/about-us-1.png" alt="">
             <div class="title-info">
-                <div class="title-background">
-                    <div class="title-background-oval"></div>
-                </div>
-                <div class="title-txt">
                     <h1>關於我們</h1>
-                </div>
             </div>
+        </div>
         </div>
     </section>
     <section class="section-content">
@@ -166,7 +190,7 @@
                     <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
                 </div>
                 <div class="brand-copyright">
-                    <p>© 2023-2030 法國選物</p>
+                    <p>© 2023-2030法國選物</p>
                 </div>
             </div>
             <div class="contactus-info">

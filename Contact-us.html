@@ -7,15 +7,16 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="reset.css">
+
     <style>
         .section-contact-us {
-            width: 1920px;
-            height: 1900px;
+            width: 100%;
             background-color: #F9F0E3;
         }
 
         .section-contact-us .container {
-            padding-top: 200px;
+            padding: 5% 1.25%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -23,190 +24,122 @@
         }
 
         .contact-us-title {
-            margin-bottom: 80px;
+            margin-bottom: 5%;
         }
 
         .contact-us-title h2 {
-            font-size: 28px;
+            font-size: clamp(16px, 2.5vw, 24px);
             font-family: "Noto Serif TC", serif;
             font-weight: 900;
             font-style: normal;
-            letter-spacing: 10px;
+            letter-spacing: 0.4em;
             color: #3B3B3B;
         }
 
         .contact-us-form {
-            width: 1100px;
-            height: 1215px;
+            width: 60%;
             background-color: rgba(255, 255, 255, 0.6);
             border: 1px solid #3B3B3B;
-            border-radius: 10px;
+            border-radius: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
-            padding-top: 85px;
+            padding: 2.5% 1.25%;
+
         }
-        .person-info{
-            width: 1030px;
+
+        .person-info {
+            width: 90%;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         input {
             text-align: center;
-            font-size: 20px;
+            font-size: clamp(12px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
             color: #3B3B3B;
-            letter-spacing: 5px;
-            width: 454px;
-            height: 105px;
+            letter-spacing: 0.2em;
             background-color: rgba(255, 255, 255, 0.6);
             border: 1px solid #3B3B3B;
-            border-radius: 30px;
-        }
-        input#email{
-            text-align: center;
-            font-size: 20px;
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
-            width: 1030px;
-            height: 105px;
-            background-color: rgba(255, 255, 255, 0.6);
-            border: 1px solid #3B3B3B;
-            border-radius: 30px;
-        }
-        .question-list {
-            position: relative;
-            display: block;
-            width: 1030px;
+            border-radius: 5px;
+            padding: 5px 0;
+            width: 40%;
         }
 
-        .category span {
+        input#email {
+            text-align: center;
+            font-size: clamp(12px, 2.5vw, 18px);
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0.2em;
+            color: #3B3B3B;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid #3B3B3B;
+            border-radius: 5px;
+            padding: 5px 0;
+            width: 90%;
+            margin: 3% 0;
+        }
+        .question-list{
+            text-align: center;
+            font-size: clamp(12px, 2.5vw, 18px);
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0.2em;
+            color: #3B3B3B;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid #3B3B3B;
+            border-radius: 5px;
+            padding: 5px 0;
+            width: 90%;
+        }
+        textarea{
             text-align: justify;
-            font-size: 20px;
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
-
-
-        }
-
-        .category {
-            position: relative;
-            width: 1030px;
-            height: 105px;
-            color: #3B3B3B;
-            font-size: 20px;
-            background-color: rgba(255, 255, 255, 0.6);
-            border: 1px solid #3B3B3B;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 30px;
-
-
-        }
-
-        .category::after {
-            content: "";
-            position: absolute;
-            top: 50px;
-            right: 50px;
-            border-width: 10px 8px;
-            border-style: solid;
-            border-color: #999 transparent transparent transparent;
-        }
-
-        .question-category {
-            display: none;
-            width: 1030px;
-            position: absolute;
-            color: #3B3B3B;
-            padding: 0;
-            margin: 0;
-            background-color: rgba(255, 255, 255);
-            border: 1px solid #3B3B3B;
-            border-radius: 10px;
-            z-index: 5;
-        }
-
-        .question-list:hover {
-            .question-category {
-                display: block;
-            }
-
-            .question-category>li {
-                display: block;
-                padding: 10px;
-                margin: 0 10px;
-                cursor: pointer;
-                text-align: justify;
-                font-size: 20px;
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: 5px;
-                color: #3B3B3B;
-            }
-        }
-
-        .question-category>li:hover {
-            background-color: #EEDBD6;
-        }
-        .question-txt{
-            width: 1030px;
-            height: 435px;
-            background-color: rgba(255, 255, 255, 0.6);
-            border: 1px solid #3B3B3B;
-            border-radius: 30px;
-        }
-        .question-txt p{
-            text-align: center;
-            font-size: 20px;
+            font-size: clamp(12px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
             color: #3B3B3B;
-            letter-spacing: 5px;
-            padding-top: 45px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: 1px solid #3B3B3B;
+            border-radius: 5px;
+            padding: 20px 0;
+            width: 90%;
+            margin: 3% 0;
 
         }
+
         .send {
-            width: 454px;
-            height: 105px;
-            background-color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 85px;
+            width:70%;
+            padding: 10px 0;
+            background-color:#F39E23;
             border: 1px solid #3B3B3B;
-            border-radius: 30px;  
+            border-radius: 20px;
 
         }
-        .send a{
+
+        .send a {
             text-decoration: none;
             text-align: center;
-            font-size: 20px;
+            font-size: clamp(12px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-weight: 600;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
             color: #3B3B3B;
         }
-        
     </style>
 </head>
 
@@ -217,21 +150,30 @@
                 <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
             </div>
             <div class="header-info">
-                <nav class="header-list">
-                    <ul>
-                        <li><a href="Abous-us.html">關於我們</a></li>
-                        <li><a href="Order-info.html">訂購須知</a></li>
-                        <li><a href="Products-category.html">產品介紹</a></li>
-                        <li><a href="News.html">最新消息</a></li>
-                        <li><a href="Question.html">常見問題</a></li>
-                        <li><a href="Contact-us.html">聯絡我們</a></li>
-                    </ul>
-                </nav>
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart-black.svg"
+                                alt=""></a></div>
                 </div>
+                <nav class="header-list">
+                    <input type="checkbox" id="menu">
+                    <label for="menu" class="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="cover">
+                            <ul>
+                                <li><a href="Abous-us.html">關於我們</a></li>
+                                <li><a href="Order-info.html">訂購須知</a></li>
+                                <li><a href="Products-category.html">產品介紹</a></li>
+                                <li><a href="News.html">最新消息</a></li>
+                                <li><a href="Question.html">常見問題</a></li>
+                                <li><a href="Contact-us.html">聯絡我們</a></li>
+                            </ul>
+                        </span>
+                    </label>
+                </nav>
             </div>
         </div>
     </header>
@@ -246,19 +188,13 @@
                     <input type="text" id="phonenumber" placeholder="手機">
                 </div>
                 <input type="text" id="email" placeholder="信箱">
-                <div class="question-list">
-                    <div class="category">
-                        <span>問題分類</span>
-                    </div>
-                    <ul class="question-category">
-                        <li>產品問題</li>
-                        <li>購買問題</li>
-                        <li>會員問題</li>
-                    </ul>
-                </div>
-                <div class="question-txt">
-                    <p>問題內容</p>
-                </div>
+                <select class="question-list">
+                    <option>問題分類</option>
+                    <option>產品問題</option>
+                    <option>購買問題</option>
+                    <option>會員問題</option>
+                </select>
+                <textarea  rows="5" cols="33"></textarea>
                 <button class="send"><a href="">送出
                     </a></button>
             </div>

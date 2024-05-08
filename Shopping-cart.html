@@ -7,98 +7,139 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="reset.css">
+
     <style>
         .section-shopping-cart {
-            width: 1920px;
-            height: 1900px;
+            width: 100%;
             background-color: #F9F0E3;
         }
 
         .section-shopping-cart .container {
-            padding-top: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5% 1.25%;
         }
 
-        table {
-            width: 1100px;
-            height: 960px;
-            border: 1px solid #3B3B3B;
-            border-collapse: collapse;
-            background-color: rgba(255, 255, 255, 0.669);
-            text-align: center;
+        .products-info {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #606060;
+            border-radius: 5px;
         }
 
-        tr {
-            border: 1px solid #333232;
-            height: 295px;
-        }
-
-        tr:first-child {
-            height: 85px;
-        }
-
-        td {
-            border: 1px solid #333232;
-        }
-
-        th {
+        .products-title {
+            width: 100%;
             background-color: #F9D9AB;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+
         }
 
-        th p {
-            font-size: 28px;
+        .products-title .title {
+            font-size: clamp(16px, 2vw, 20px);
             font-family: "Noto Serif TC", serif;
-            font-weight: 500;
+            font-weight: 900;
             font-style: normal;
-            letter-spacing: 10px;
+            letter-spacing: 0.2em;
+            color: #3B3B3B;
         }
 
-        th:first-child {
-            width: 330px;
+        .products-items {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
         }
 
-        th:nth-child(2) {
-            width: 365px;
+        .products-items:nth-child(3) {
+            border-top: 1px solid #606060;
+            border-bottom: 1px solid #606060;
         }
 
-        th:nth-child(3) {
-            width: 150px;
+        .products-items:nth-child(4) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 
-        th:nth-child(4) {
-            width: 115px;
+        .products-items span {
+            display: none;
         }
 
-        td p {
-            font-size: 20px;
-            font-family: "Noto Serif TC", serif;
+        .pic-products {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pic-products img {
+            width: 80%;
+            vertical-align: middle;
+        }
+
+        .products-txt {
+            width: 70%;
+            display: flex;
+            align-items: center;
+            font-size: clamp(12px, 2vw, 16px);
+            font-family: "Inter", sans-serif;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
+            color: #3B3B3B;
         }
 
+        .products-txt .name {
+            width: 33%;
+            font-family: "Noto Serif TC", serif;
+        }
+
+        .products-txt .price {
+            width: 23%;
+        }
+
+        .products-txt .num {
+            width: 23%;
+        }
+
+        .products-txt .subtotal {
+            width: 23%;
+        }
+
+
         .shopping-count {
-            width: 1100px;
+            width: 80%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            margin-top: 3%;
 
         }
 
         .shopping-count p {
-            font-size: 20px;
-            font-family: "Noto Serif TC", serif;
+            font-size: clamp(12px, 2vw, 16px);
+            font-family: "Inter", sans-serif;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
         }
 
         .shopping-content {
-            width: 520px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
-            padding-top: 50px;
         }
 
         .discount {
@@ -113,7 +154,7 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 5%;
         }
 
         .pic-discount {
@@ -126,277 +167,189 @@
             height: 100%;
         }
 
-        input {
-            border: 1px solid #333232;
-            width: 215px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.669);
-            font-size: 16px;
+        .discount input {
+            border: 1px solid #606060;
+            border-radius: 5px;
+            font-size: clamp(12px, 2vw, 16px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
+            padding: 5px;
         }
 
         .shopping-option {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 520px;
-
+            margin-top: 10%;
+            width: 100%;
         }
 
         .shopping-option-title {
-            width: 520px;
-            margin-top: 65px;
-            margin-bottom: 15px;
+            margin-bottom: 2.5%;
+
         }
 
         .shipping-fee-count {
-            width: 520px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            gap: 10%;
         }
 
-        .shipping-option-list {
-            position: relative;
-            display: block;
-            width: 215px;
-        }
-
-        .option span {
-            text-align: justify;
-            font-size: 16px;
+        #shipping-option-list {
+            width: 40%;
+            padding: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #606060;
+            font-size: clamp(12px, 2vw, 16px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
-            font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
-
-
         }
 
-        .option {
-            position: relative;
-            width: 215px;
-            height: 30px;
-            color: #3B3B3B;
-            font-size: 20px;
-            background-color: rgba(255, 255, 255, 0.669);
-            border: 1px solid #3B3B3B;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-
-        }
-
-        .option::after {
-            content: "";
-            position: absolute;
-            top: 10px;
-            right: 12px;
-            border-width: 8px 6px;
-            border-style: solid;
-            border-color: #999 transparent transparent transparent;
-        }
-
-        .shipping-option {
-            display: none;
-            width: 215px;
-            position: absolute;
-            color: #3B3B3B;
-            padding: 0;
-            margin: 0;
-            background-color: #FFF;
-            border: 1px solid #3B3B3B;
-            z-index: 5;
-        }
-
-        .shipping-option-list:hover {
-            .shipping-option {
-                display: block;
-            }
-
-            .shipping-option>li {
-                display: block;
-                padding: 10px;
-                margin: 0 10px;
-                cursor: pointer;
-                text-align: justify;
-                font-size: 16px;
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: 5px;
-                color: #3B3B3B;
-            }
-        }
-
-        .shipping-option>li:hover {
-            background-color: #EEDBD6;
+        #shipping-option-list option {
+            font-size: clamp(12px, 2vw, 16px);
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
         }
 
         .delivery-fee {
-            width: 215px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.669);
-            border: 1px solid #333232;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-
+            background-color: white;
+            border: 1px solid #606060;
+            border-radius: 5px;
+            padding: 6px 3px;
+            width: 40%;
         }
 
-        .delivery-fee p {
-            text-align: center;
-            font-size: 16px;
+        #payment-option-list {
+            width: 40%;
+            padding: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #606060;
+            font-size: clamp(12px, 2vw, 16px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
-            font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
+            margin-top: 5%;
         }
 
 
-
-        .payment-option-list {
-            position: relative;
-            display: block;
-            width: 520px;
-            margin-top: 15px;
-            margin-bottom: 50px;
-        }
-
-        .option span {
-            text-align: justify;
-            font-size: 16px;
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-            letter-spacing: 5px;
-            color: #3B3B3B;
-
-
-        }
-
-        .payment-option-list .option {
-            position: relative;
-            width: 520px;
-            height: 30px;
-            color: #3B3B3B;
-            font-size: 20px;
-            background-color: rgba(255, 255, 255, 0.669);
-            border: 1px solid #3B3B3B;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-
-        }
-
-        .option::after {
-            content: "";
-            position: absolute;
-            top: 10px;
-            right: 12px;
-            border-width: 8px 6px;
-            border-style: solid;
-            border-color: #999 transparent transparent transparent;
-        }
-
-        .payment-option {
-            display: none;
-            width: 520px;
-            position: absolute;
-            color: #3B3B3B;
-            padding: 0;
-            margin: 0;
-            background-color: #FFF;
-            border: 1px solid #3B3B3B;
-            z-index: 5;
-        }
-
-        .payment-option-list:hover {
-            .payment-option {
-                display: block;
-            }
-
-            .payment-option>li {
-                display: block;
-                padding: 10px;
-                margin: 0 10px;
-                cursor: pointer;
-                text-align: justify;
-                font-size: 16px;
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: 5px;
-                color: #3B3B3B;
-            }
-        }
-
-        .payment-option>li:hover {
-            background-color: #EEDBD6;
-        }
 
         .shopping-total {
-            width: 520px;
-            height: 255px;
-            background-color: rgba(255, 255, 255, 0.669);
-            border: 1px solid #3B3B3B;
+            padding: 2% 0;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #606060;
+            border-radius: 5px;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
             align-items: center;
         }
-        .price-total{
-            width: 435px;
+
+        .price-total {
+            width: 90%;
             display: flex;
             justify-content: space-between;
-            align-items: center;    
+            align-items: center;
         }
-        
-        .delivery-fee-total{
-            width: 435px;
+
+        .delivery-fee-total {
+            width: 90%;
             display: flex;
             justify-content: space-between;
-            align-items: center; 
- 
+            align-items: center;
+
         }
-        .delivery-fee-price{
-            display: flex;
-            gap:15px;
+
+        .delivery-fee-title {
+            margin: 10% 0;
         }
-        hr{
-            width: 435px;
-            color: #3B3B3B;
+
+        hr {
+            width: 90%;
+            color: #606060;
+            margin-bottom: 4%;
         }
-        .subtotal{
-            width: 435px;
+
+        .total-info {
+            width: 90%;
             display: flex;
             justify-content: space-between;
-            align-items: center;    
+            align-items: center;
         }
-        .subtotal .pic-shopping-cart{
-            width: 40px;
-            height: 40px;
+
+        .total-info .pic-shopping-cart {
+            width: 8%;
         }
-        .subtotal .pic-shopping-cart img{
+
+        .total-info .pic-shopping-cart img {
             width: 100%;
-            height: 100%;
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width:768px) {
+            .products-info {
+                width: 90%;
+            }
+
+            .products-title {
+                display: none;
+            }
+
+            .products-items {
+                padding: 10% 0;
+            }
+
+            .products-items:nth-child(2) {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+
+            .products-items span {
+                display: block;
+                margin-bottom: 10%;
+            }
+
+            .products-txt {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pic-products {
+                width: 50%;
+            }
+
+            .pic-products img {
+                width: 90%;
+            }
+
+            .products-txt {
+                width: 50%;
+            }
+
+            .products-txt .name {
+                width: 100%;
+            }
+
+            .products-txt .price {
+                margin-top: 10%;
+            }
+
+            .products-txt .num {
+                margin-top: 10%;
+            }
+
+            .products-txt .subtotal {
+                margin-top: 10%;
+            }
+
+            .shopping-count {
+                flex-direction: column;
+            }
+
+            .shopping-option {
+                margin-top: 5%;
+            }
+
+            .shopping-total {
+                margin-top: 10%;
+            }
         }
     </style>
 </head>
@@ -408,165 +361,220 @@
                 <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
             </div>
             <div class="header-info">
-                <nav class="header-list">
-                    <ul>
-                        <li><a href="Abous-us.html">關於我們</a></li>
-                        <li><a href="Order-info.html">訂購須知</a></li>
-                        <li><a href="Products-category.html">產品介紹</a></li>
-                        <li><a href="News.html">最新消息</a></li>
-                        <li><a href="Question.html">常見問題</a></li>
-                        <li><a href="Contact-us.html">聯絡我們</a></li>
-                    </ul>
-                </nav>
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart-black.svg"
+                                alt=""></a></div>
                 </div>
+                <nav class="header-list">
+                    <input type="checkbox" id="menu">
+                    <label for="menu" class="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="cover">
+                            <ul>
+                                <li><a href="Abous-us.html">關於我們</a></li>
+                                <li><a href="Order-info.html">訂購須知</a></li>
+                                <li><a href="Products-category.html">產品介紹</a></li>
+                                <li><a href="News.html">最新消息</a></li>
+                                <li><a href="Question.html">常見問題</a></li>
+                                <li><a href="Contact-us.html">聯絡我們</a></li>
+                            </ul>
+                        </span>
+                    </label>
+                </nav>
             </div>
         </div>
     </header>
     <section class="section-shopping-cart">
         <div class="container">
-            <table>
-                <tr>
-                    <th>
-                        <p>商品圖片</p>
-                    </th>
-                    <th>
-                        <p>商品名稱</p>
-                    </th>
-                    <th>
-                        <p>價格</p>
-                    </th>
-                    <th>
-                        <p>數量</p>
-                    </th>
-                    <th>
-                        <p>總計</p>
-                    </th>
-                </tr>
-                <tr>
-                    <td><img src="Products/products (1).png" alt=""></td>
-                    <td>
-                        <p>ALDO Biranad Crossbody Bag</p>
-                    </td>
-                    <td>
-                        <p>$1000</p>
-                    </td>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td>
-                        <p>$1000</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="Products/products (2).png" alt=""></td>
-                    <td>
-                        <p>ALDO Biranad Crossbody Bag</p>
-                    </td>
-                    <td>
-                        <p>$1000</p>
-                    </td>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td>
-                        <p>$1000</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="Products/products (3).png" alt=""></td>
-                    <td>
-                        <p>ALDO Biranad Crossbody Bag</p>
-                    </td>
-                    <td>
-                        <p>$1000</p>
-                    </td>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td>
-                        <p>$1000</p>
-                    </td>
-                </tr>
-            </table>
-            <div class="shopping-count">
-                <div class="shopping-content">
-                    <div class="discount">
-                        <div class="discount-title">
-                            <div class="pic-discount"><img src="Products/discount.svg" alt=""></div>
-                            <div class="txt-discount">
-                                <p>Discount code</p>
-                            </div>
+            <div class="products-info">
+                <div class="products-title">
+                    <div class="title">商品圖片</div>
+                    <div class="title">商品名稱</div>
+                    <div class="title">價格</div>
+                    <div class="title">數量</div>
+                    <div class="title">小計</div>
+                </div>
+                <div class="products-items">
+                    <div class="pic-products"><img src="Products/products (2).png" alt=""></div>
+                    <div class="products-txt">
+                        <div class="name">ALDO Biranad 黑金斜背包
                         </div>
-                        <input type="text" placeholder="請輸入...">
-                    </div>
-                    <div class="shopping-option">
-                        <div class="shopping-option-title">
-                            <p>請選擇運送及付款方式</p>
+                        <div class="price"><span>價格:</span>$15000</div>
+                        <div class="num"><span>數量:</span>
+                            <select class="number" onchange="calculateSubtotal(this)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="9">9</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </div>
-                        <div class="shipping-fee-count">
-                            <div class="shipping-option-list">
-                                <div class="option">
-                                    <span>運送方式</span>
-                                </div>
-                                <ul class="shipping-option">
-                                    <li>超商</li>
-                                    <li>郵局</li>
-                                    <li>宅配</li>
-                                </ul>
-                            </div>
-                            <div class="delivery-fee">
-                                <p>費用</p>
-                            </div>
+                        <div class="subtotal"><span>小計:</span>
+                            <div class="subtotal-value">$15000</div>
                         </div>
-                        <div class="payment-option-list">
-                            <div class="option">
-                                <span>付款方式</span>
-                            </div>
-                            <ul class="payment-option">
-                                <li>線上刷卡</li>
-                                <li>超商貨到付款</li>
-                                <li>Atm轉帳</li>
-                            </ul>
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
-                <div class="shopping-total">
-                    <div class="price-total">
-                        <div class="price-total-title">
-                            <p>商品總計</p>
+                <div class="products-items">
+                    <div class="pic-products"><img src="Products/products (3).png" alt=""></div>
+                    <div class="products-txt">
+                        <div class="name">Alanderiel 鍊條斜背包
                         </div>
-                        <div class="price-total-price">
-                            <p>$3000</p>
+                        <div class="price"><span>價格:</span>$17500</div>
+                        <div class="num">
+                            <span>數量:</span><select class="number" onchange="calculateSubtotal(this)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="9">9</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="delivery-fee-total">
-                        <div class="delivery-fee-title">
-                            <p>運費</p>
-                        </div>
-                        <div class="delivery-fee-price">
-                        <div class="delivery-fee-icon">
-                            <p>$</p>
-                        </div>
-                        <div class="delivery-fee-number">
-                            <p>100</p>
-                        </div>
-                    </div>
-                    </div>
-                    <hr>
-                    <div class="subtotal">
-                        <div class="pic-shopping-cart"><img src="Products/shopping-cart-black.svg" alt=""></div>
-                        <div class="subtotal-price">
-                            <p>$3100</p>
+                        <div class="subtotal"><span>小計:</span>
+                            <div class="subtotal-value">$17500</div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="products-items">
+                    <div class="pic-products"><img src="Products/products (1).png" alt=""></div>
+                    <div class="products-txt">
+                        <div class="name">Biocyte 魚油
+                        </div>
+                        <div class="price"><span>價格:</span>$999</div>
+                        <div class="num">
+                            <span>數量:</span><select class="number" onchange="calculateSubtotal(this)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="9">9</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="subtotal"><span>小計:</span>
+                            <div class="subtotal-value">$999</div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+                <div class="shopping-count">
+                    <div class="shopping-content">
+                        <div class="discount">
+                            <div class="discount-title">
+                                <div class="pic-discount"><img src="Products/discount.svg" alt=""></div>
+                                <div class="txt-discount">
+                                    <p>折扣碼</p>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="請輸入...">
+                        </div>
+                        <div class="shopping-option">
+                            <div class="shopping-option-title">
+                                <p>請選擇運送及付款方式</p>
+                            </div>
+                            <div class="shipping-fee-count">
+                                <select id="shipping-option-list">
+                                    <option>運送方式</option>
+                                    <option>超商</option>
+                                    <option>郵局</option>
+                                    <option>宅配</option>
+                                </select>
+                                <div class="delivery-fee">
+                                    <p>費用</p>
+                                </div>
+                            </div>
+                            <select id="payment-option-list">
+                                <option>付款方式</option>
+                                <option>線上刷卡</option>
+                                <option>超商貨到付款</option>
+                                <option>Atm轉帳</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="shopping-total">
+                        <div class="price-total">
+                            <div class="price-total-title">
+                                <p>商品總計</p>
+                            </div>
+                            <div class="price-total-price">
+                                <p>$3000</p>
+                            </div>
+                        </div>
+                        <div class="delivery-fee-total">
+                            <div class="delivery-fee-title">
+                                <p>運費</p>
+                            </div>
+                            <div class="delivery-fee-price">
+                                <p>$100</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="total-info">
+                            <div class="pic-shopping-cart"><img src="Products/shopping-cart-black.svg" alt=""></div>
+                            <div class="total-price">
+                                <p>$3100</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </section>
+    <script>
+        function calculateSubtotal(selectElement) {
+            var priceElement = selectElement.closest('.products-items').querySelector('.price');
+            var priceText = priceElement.textContent.trim();
+            var price = parseFloat(priceText.replace(/[^\d.]/g, ''));
+            var quantity = parseInt(selectElement.value);
+            var subtotal = price * quantity;
+            var subtotalElement = selectElement.closest('.products-items').querySelector('.subtotal-value');
+            subtotalElement.textContent = '$' + subtotal; updateTotalPrice();
+        }
+        function updateTotalPrice() {
+        var subtotalValues = document.querySelectorAll('.subtotal-value');
+        var totalPrice = 0;
+        subtotalValues.forEach(function(subtotalElement) {
+            var subtotalText = subtotalElement.textContent.trim();
+            var subtotal = parseFloat(subtotalText.replace(/[^\d.]/g, ''));
+            totalPrice += subtotal;
+        });
+
+        var totalPriceElement = document.querySelector('.price-total-price p');
+        totalPriceElement.textContent = '$' + totalPrice.toFixed(0);
+        updateTotalPriceWithDeliveryFee();
+    }
+    function updateTotalPriceWithDeliveryFee() {
+    var subtotalValues = document.querySelectorAll('.subtotal-value');
+    var totalPrice = 0;
+    subtotalValues.forEach(function(subtotalElement) {
+        var subtotalText = subtotalElement.textContent.trim();
+        var subtotal = parseFloat(subtotalText.replace(/[^\d.]/g, ''));
+        totalPrice += subtotal;
+    });
+
+    var deliveryFeeText = document.querySelector('.delivery-fee-price p').textContent.trim();
+    var deliveryFee = parseFloat(deliveryFeeText.replace(/[^\d.]/g, ''));
+
+    var totalPriceElement = document.querySelector('.total-price p');
+    totalPriceElement.textContent = '$' + (totalPrice + deliveryFee).toFixed(0);
+}
+    </script>
     <footer class="footer-FS">
         <div class="container">
             <div class="brand-info">

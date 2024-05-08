@@ -7,23 +7,31 @@
     <title>FS-website</title>
     <link rel="stylesheet" href="header-footer.css">
     <link rel="stylesheet" href="content-page.css">
+    <link rel="stylesheet" href="reset.css">
+
     <style>
         .section-product-info {
-            width: 1920px;
-            height: 1125px;
+            width: 100%;
             background-color: #F9F0E3;
         }
 
         .section-product-info .container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: flex-start;
-            padding-top: 200px;
+            padding: 4% 1.25%;
+        }
+
+        .pic-product {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .pic-main-product {
-            width: 500px;
-            height: 500px;
+            width: 80%;
             border: 1px solid #606060;
             border-radius: 10px;
 
@@ -33,19 +41,21 @@
             width: 100%;
             height: 100%;
             border-radius: 10px;
+            vertical-align: middle;
+
         }
 
         .product-slide {
-            width: 500px;
+            width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-items: center;
-            margin-top: 75px;
+            margin-top: 10%;
         }
 
         .slide {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             border: 1px solid #606060;
             background-color: white;
@@ -55,13 +65,13 @@
         }
 
         .slide img {
-            width: 36px;
-            height: 36px;
+            width: 100%;
+            vertical-align: middle;
+
         }
 
         .pic-slide {
-            width: 150px;
-            height: 150px;
+            width: 35%;
             border: 1px solid #606060;
             border-radius: 10px;
         }
@@ -70,149 +80,79 @@
             width: 100%;
             height: 100%;
             border-radius: 10px;
+            vertical-align: middle;
+
         }
 
         .product-info {
-            width: 520px;
+            width: 40%;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 14px;
+            gap: 20px;
         }
 
         .product-title h1 {
-            font-size: 32px;
+            font-size: clamp(20px, 2.5vw, 28px);
             font-family: "Noto Serif TC", serif;
             font-weight: 900;
             font-style: normal;
-            letter-spacing: 10px;
+            letter-spacing: 0.2em;
             color: #3B3B3B;
         }
 
         .product-txt p {
             text-align: justify;
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            line-height: 30px;
+            letter-spacing: 0.3em;
+            line-height: 25px;
             color: #3B3B3B;
         }
 
         .product-price p {
             text-align: justify;
-            font-size: 24px;
+            font-size: clamp(14px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            line-height: 30px;
+            letter-spacing: 0.2em;
+            ;
             color: #3B3B3B;
         }
 
         .product-size p {
             text-align: justify;
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            line-height: 30px;
+            letter-spacing: 0.2em;
+            ;
             color: #3B3B3B;
         }
 
         .product-size-list {
-            position: relative;
-            display: block;
             width: 100%;
-            margin: 0 0 10px;
-        }
-
-        .size span {
-            text-align: justify;
-            font-size: 16px;
+            background-color: #fff;
+            padding: 10px 5px;
+            border-radius: 5px;
+            font-size: clamp(12px, 2.5vw, 16px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
-            line-height: 30px;
             color: #3B3B3B;
-
         }
 
-        .size {
-            position: relative;
-            width: 500px;
-            color: #3B3B3B;
-            font-size: 16px;
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #3B3B3B;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .size::after {
-            content: "";
-            position: absolute;
-            top: 16px;
-            right: 12px;
-            border-width: 8px 6px;
-            border-style: solid;
-            border-color: #999 transparent transparent transparent;
-        }
-
-        .size-option {
-            display: none;
-            width: 520px;
-            position: absolute;
-            color: #3B3B3B;
-            padding: 0;
-            margin: 0;
-            background-color: #FFF;
-            border-radius: 5px;
-            border: 1px solid #3B3B3B;
-            z-index: 5;
-        }
-
-        .product-size-list:hover {
-            .size-option {
-                display: block;
-            }
-
-            .size-option>li {
-                display: block;
-                padding: 10px;
-                font-size: 16px;
-                margin: 0 10px;
-                cursor: pointer;
-                text-align: justify;
-                font-size: 14px;
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-                letter-spacing: 5px;
-                color: #3B3B3B;
-
-            }
-        }
-
-        .size-option>li:hover {
-            background-color: #EEDBD6;
-            border-radius: 5px;
-        }
 
         .product-buying {
-            width: 520px;
-            height: 115px;
+            width: 100%;
+            padding: 10px 0;
+            border-radius: 5px;
             background-color: #F9D9AB;
             display: flex;
             justify-content: space-around;
@@ -220,35 +160,58 @@
         }
 
         .product-buying p {
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vw, 18px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
+            color: #3B3B3B;
+
         }
 
         .number {
-            width: 110px;
-            height: 50px;
+            width: 20%;
+            padding: 10px 0;
             background-color: #fff;
+            border-radius: 5px;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             align-items: center;
             margin-left: -30px;
         }
 
-        .shopping-cart {
-            width: 190px;
-            height: 65px;
+        .number p {
+            font-size: clamp(14px, 2.5vw, 18px);
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #3B3B3B;
+
+        }
+
+        .add-shopping-cart {
+            width: 40%;
+            padding: 10px 0;
             background-color: #F39E23;
+            border-radius: 5px;
+            border: 0;
+        }
+
+        .add-shopping-cart a {
+            font-size: clamp(14px, 2.5vw, 18px);
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0.2em;
+            color: #3B3B3B;
+            text-decoration: none;
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
         }
 
         .section-product-content {
-            width: 1920px;
+            width: 100%;
             background-color: #F9F0E3;
         }
 
@@ -257,53 +220,73 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
+            padding: 4% 1.25% 2% 1.25%;
+            border-top: #9f9f9f 1px solid;
 
-        hr {
-            width: 1100px;
-            margin-bottom: 100px;
         }
 
         .product-description-title h2 {
-            font-size: 24px;
+            font-size: clamp(16px, 2.5vw, 24px);
             font-family: "Noto Serif TC", serif;
             font-weight: 600;
             font-style: normal;
-            letter-spacing: 10px;
+            letter-spacing: 0.3em;
             color: #3B3B3B;
         }
 
         .product-description-txt {
-            margin-top: 30px;
-            margin-bottom: 100px;
+            margin-top: 5%;
+            margin-bottom: 10%;
 
         }
 
         .product-description-txt li {
             text-align: justify;
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vw, 20px);
             font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 300;
             font-style: normal;
-            letter-spacing: 5px;
+            letter-spacing: 0.2em;
             line-height: 30px;
             color: #3B3B3B;
             list-style-type: disc;
         }
 
         .more-pictures {
-            width: 900px;
-            height: 470px;
-            margin-bottom: 70px;
-
+            width: 50%;
+            margin-bottom: 3%;
         }
 
-        .more-pictures img{
+        .more-pictures img {
             width: 100%;
             height: 100%;
             border-radius: 10px;
+            vertical-align: middle;
         }
+        @media screen and (max-width:768px){
+
+            .section-product-info .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        .pic-product {
+            width: 70%;
+        }
+
+        .product-info{
+            width: 80%;
+        }
+        .slide img{
+            width:200%;
+        }
+        .more-pictures {
+            width: 80%;
+        }
+
+
     </style>
 </head>
 
@@ -314,21 +297,30 @@
                 <a href="FS-website.html"><img src="Page/Logo.png" alt=""></a>
             </div>
             <div class="header-info">
-                <nav class="header-list">
-                    <ul>
-                        <li><a href="Abous-us.html">關於我們</a></li>
-                        <li><a href="Order-info.html">訂購須知</a></li>
-                        <li><a href="Products-category.html">產品介紹</a></li>
-                        <li><a href="News.html">最新消息</a></li>
-                        <li><a href="Question.html">常見問題</a></li>
-                        <li><a href="Contact-us.html">聯絡我們</a></li>
-                    </ul>
-                </nav>
                 <div class="shopping-info">
                     <div class="pic-search"><img src="Page/search.svg" alt=""></div>
                     <div class="pic-customer"><a href="Log-in.html"><img src="Page/customer.svg" alt=""></a></div>
-                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart.svg" alt=""></a></div>
+                    <div class="pic-shopping-cart"><a href="Shopping-cart.html"><img src="Page/shopping-cart-black.svg"
+                                alt=""></a></div>
                 </div>
+                <nav class="header-list">
+                    <input type="checkbox" id="menu">
+                    <label for="menu" class="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <span class="cover">
+                            <ul>
+                                <li><a href="Abous-us.html">關於我們</a></li>
+                                <li><a href="Order-info.html">訂購須知</a></li>
+                                <li><a href="Products-category.html">產品介紹</a></li>
+                                <li><a href="News.html">最新消息</a></li>
+                                <li><a href="Question.html">常見問題</a></li>
+                                <li><a href="Contact-us.html">聯絡我們</a></li>
+                            </ul>
+                        </span>
+                    </label>
+                </nav>
             </div>
         </div>
     </header>
@@ -345,46 +337,42 @@
             </div>
             <div class="product-info">
                 <div class="product-title">
-                    <h1>ALDO Biranad Crossbody Bag</h1>
+                    <h1>ALDO Biranad 黑金斜背包</h1>
                 </div>
                 <div class="product-txt">
                     <p>風格精緻且帶有一絲魅力，我們華麗的小 Biranad 斜挎包完全符合您的風格。光滑的深黑色搭配金色鏈帶使這款包非常適合參加雞尾酒會。</p>
                 </div>
                 <div class="product-price">
-                    <p>$10000</p>
+                    <p>$15000</p>
                 </div>
                 <div class="product-size">
-                    <p>Size</p>
+                    <p>尺寸</p>
                 </div>
-                <div class="product-size-list">
-                    <div class="size">
-                        <span>Choose</span>
-                    </div>
-                    <ul class="size-option">
-                        <li>Large</li>
-                        <li>Medium</li>
-                        <li>Small</li>
-                    </ul>
-                </div>
+                <select class="product-size-list">
+                    <option value="small">S</option>
+                    <option value="medium">M</option>
+                    <option value="large">L</option>
+                </select>
+
                 <div class="product-buying">
                     <div class="product-quantity">
-                        <p>Quantity</p>
+                        <p>數量</p>
                     </div>
                     <div class="number">
                         <img src="Products/minus.svg" alt="">
                         <p>1</p>
                         <img src="Products/plus.svg" alt="">
                     </div>
-                    <div class="shopping-cart">
-                        <p>Add to cart</p>
-                    </div>
+                    <button class="add-shopping-cart">
+                        <a href="Shopping-cart.html">加入購物車
+                            <img src="Products/shopping-cart-dark.svg" alt=""></a>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
     <section class="section-product-content">
         <div class="container">
-            <hr>
             <div class="product-description">
                 <div class="product-description-title">
                     <h2>商品描述</h2>
