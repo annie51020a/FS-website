@@ -96,6 +96,7 @@
 
         .highlight {
             background-color: #f5c98c;
+            border-radius: 5px;
         }
 
         @media screen and (max-width:768px) {
@@ -261,18 +262,18 @@
     </section>
     <script>
         function scrollToCategory() {
-            var selectElement = document.getElementById("select");
-            var selectedCategory = selectElement.options[selectElement.selectedIndex].value;
-            var targetElement = document.getElementById(selectedCategory);
+            let selectElement = document.getElementById("select");
+            let selectedCategory = selectElement.options[selectElement.selectedIndex].value;
+            let targetElement = document.getElementById(selectedCategory);
             if (targetElement) {
-                var allH2Elements = document.querySelectorAll('.question-title h2');
+                let allH2Elements = document.querySelectorAll('.question-title h2');
                 allH2Elements.forEach(function (element) {
                     element.classList.remove('highlight');
                 });
 
                 targetElement.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 
-                var targetH2Element = targetElement.querySelector('h2');
+                let targetH2Element = targetElement.querySelector('h2');
                 targetH2Element.classList.add('highlight');
             }
         }
